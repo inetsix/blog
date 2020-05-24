@@ -1,4 +1,4 @@
-# Home
+# Inetsix Blog
 
 Website provides a list of notes around network and automation.
 
