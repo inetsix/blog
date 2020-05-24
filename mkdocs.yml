@@ -1,0 +1,29 @@
+---
+site_name: Inetsix doc repository
+site_url: https://www.inetsix.net
+site_description: A curated list of awesome Python frameworks, libraries and software
+site_author: TiTom73
+repo_url: https://github.com/inetsix/inetsix.github.io
+theme:
+  name: material
+  palette:
+    primary: 'blue grey'
+    accent: 'blue grey'
+  feature:
+    tabs: false
+  hljs_languages:
+    - yaml
+    - shell
+
+markdown_extensions:
+  - smarty
+  - toc:
+      permalink: true
+  - sane_lists
+  - admonition
+  - codehilite:
+      guess_lang: false
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
