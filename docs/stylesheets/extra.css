@@ -80,5 +80,11 @@
     vertical-align: top;
     background-color: var(--md-accent-bg-color);
 }
+.md-nav__link[data-md-state="blur"] {
+    color: var(--md-default-fg-color--light);
+}
+.md-typeset blockquote {
+    color: rgba(71, 101, 126, 0.781);
+}
 }
 

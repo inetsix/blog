@@ -1,11 +1,12 @@
-# Inetsix Blog
+# Inetsix
 
 A simple blog to share findings and content around network and automation.
 
-## Misc
+<p align="center">
+  <img src='medias/inetsix-logo.png' alt='Arista CloudVision and Ansible'/>
+</p>
 
-
-## Related content
+__Related content__
 
 - [Personnal Github](https://www.github.com/titom73)
 - [Arista Validated Design Collection](https://github.com/aristanetworks/ansible-avd)
