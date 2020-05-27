@@ -3,7 +3,7 @@ site_name: Inetsix doc repository
 site_url: https://www.inetsix.net
 site_description: A curated list of awesome Python frameworks, libraries and software
 site_author: TiTom73
-repo_url: https://github.com/inetsix/inetsix.github.io
+repo_url: https://github.com/inetsix/blog
 docs_dir: docs/
 theme:
   name: material
@@ -31,7 +31,6 @@ markdown_extensions:
   - codehilite:
       guess_lang: false
 
-plugins:
   - search:
       separator: '[\s\-\.]+'
 
