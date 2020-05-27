@@ -2,7 +2,7 @@ name: Mkdocs
 on:
   push:
     branches:
-      - 'compose'
+      - 'content'
 jobs:
   'doc':
     name: 'Update Public documentation'
