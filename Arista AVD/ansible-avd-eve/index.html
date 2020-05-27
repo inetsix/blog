@@ -1,0 +1,1209 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A curated list of awesome Python frameworks, libraries and software">
+      
+      
+        <link rel="canonical" href="https://www.inetsix.net/Arista%20AVD/ansible-avd-eve/">
+      
+      
+        <meta name="author" content="TiTom73">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+    
+    
+      
+        <title>Arista AVD on EVE-NG - Inetsix doc repository</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a2408e81.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arista-avd-on-eve-ng" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://www.inetsix.net" title="Inetsix doc repository" class="md-header-nav__button md-logo" aria-label="Inetsix doc repository">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Inetsix doc repository
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Arista AVD on EVE-NG
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/inetsix/blog/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.inetsix.net" title="Inetsix doc repository" class="md-nav__button md-logo" aria-label="Inetsix doc repository">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Inetsix doc repository
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/inetsix/blog/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Inetsix" class="md-nav__link">
+      Inetsix
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../yaml-jinja/" title="YAML Structures in Jinja2" class="md-nav__link">
+      YAML Structures in Jinja2
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Arista AVD
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Arista AVD" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Arista AVD
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible-avd-config/" title="Arista AVD Configuration overview" class="md-nav__link">
+      Arista AVD Configuration overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Arista AVD on EVE-NG
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Arista AVD on EVE-NG" class="md-nav__link md-nav__link--active">
+      Arista AVD on EVE-NG
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-topology" class="md-nav__link">
+    Lab topology
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab topology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eos-initial-configuration" class="md-nav__link">
+    EOS Initial Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jumphost-configuration" class="md-nav__link">
+    Jumphost Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Jumphost Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-nat-settings" class="md-nav__link">
+    Check NAT Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-access-to-eapi" class="md-nav__link">
+    Check access to eAPI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-arista-validated-design-project" class="md-nav__link">
+    Create Arista Validated Design project.
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Arista Validated Design project.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-repository" class="md-nav__link">
+    Create a repository
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-arista-valdiated-design" class="md-nav__link">
+    Configure Arista Valdiated Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Arista Valdiated Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-arista-validate-design-variables" class="md-nav__link">
+    Configure Arista Validate Design variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-connection-information" class="md-nav__link">
+    Configure connection information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-arista-valdiated-design-variables" class="md-nav__link">
+    Configure Arista Valdiated Design variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-playbook-to-deploy" class="md-nav__link">
+    Create a playbook to deploy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-verification" class="md-nav__link">
+    Check &amp; Verification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      How to
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="How to" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        How to
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/ci-to-start-docker-and-validate-code/" title="Continuous Intgration with Docker interactions" class="md-nav__link">
+      Continuous Intgration with Docker interactions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/docker-ansible/" title="Ansible using docker" class="md-nav__link">
+      Ansible using docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/virtual-env-python/" title="VirtualEnv Wrapper" class="md-nav__link">
+      VirtualEnv Wrapper
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-topology" class="md-nav__link">
+    Lab topology
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab topology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eos-initial-configuration" class="md-nav__link">
+    EOS Initial Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jumphost-configuration" class="md-nav__link">
+    Jumphost Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Jumphost Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-nat-settings" class="md-nav__link">
+    Check NAT Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-access-to-eapi" class="md-nav__link">
+    Check access to eAPI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-arista-validated-design-project" class="md-nav__link">
+    Create Arista Validated Design project.
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Arista Validated Design project.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-repository" class="md-nav__link">
+    Create a repository
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-arista-valdiated-design" class="md-nav__link">
+    Configure Arista Valdiated Design
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Arista Valdiated Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure-arista-validate-design-variables" class="md-nav__link">
+    Configure Arista Validate Design variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-connection-information" class="md-nav__link">
+    Configure connection information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-arista-valdiated-design-variables" class="md-nav__link">
+    Configure Arista Valdiated Design variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-playbook-to-deploy" class="md-nav__link">
+    Create a playbook to deploy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-verification" class="md-nav__link">
+    Check &amp; Verification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/inetsix/blog/edit/master/docs/Arista AVD/ansible-avd-eve.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="arista-avd-on-eve-ng">Arista AVD on EVE-NG<a class="headerlink" href="#arista-avd-on-eve-ng" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>Arista has published a collection named <a href="https://github.com/aristanetworks/ansible-avd/">Arista Validated Design</a> to automate build and deploy an <strong>EVPN/VXLAN</strong> fabric using Red Hat Ansible. This collection supports different deployment scenario such as pure EOS using eAPI or using cloudvision as a change manager.</p>
+<p>In this post, we will see how to create a local environment to leverage <strong>AVD Collection</strong> to build EVPN/VXLAN configuration for a set of devices and how to deploy configuration using EOS eAPI.</p>
+<h2 id="lab-topology">Lab topology<a class="headerlink" href="#lab-topology" title="Permanent link">#</a></h2>
+<p>Lab topology is running on a EVE-NG server with following elements:</p>
+<ul>
+<li>vEOS version: Any version from <code>4.21.8M</code> (lab currently runs <code>4.24.0F</code>)</li>
+<li>Out of band management: <code>10.255.1.0/24</code></li>
+<li>A jumphost to isolate Out of band management from current network. Jumphost server is running <code>Ubuntu</code> but any Linux flavor should work</li>
+</ul>
+<p>To make it easy to start, a baseline repository is available <a href="https://github.com/inetsix/demo-avd-evpn-eve-ng">on github</a>. You can clone or fork to start working with it.</p>
+<p><img alt="Lab Topology" src="medias/ansible-avd-lab-topology.png" /></p>
+<p>Topology is based on the following design:</p>
+<ul>
+<li>1 single site: No DCI feature involved here, only <strong>EVPN/VXLAN</strong> fabric spread across all nodes.</li>
+<li>2 Spines</li>
+<li>2 PODs running MLAG VTEP: provide a redundant connectivity from POD to the fabric.</li>
+<li>2 POD using single homed VTEP</li>
+<li>2 Aggregation switches each attached to its respective MLAG VTEP.</li>
+<li>1 POD to emulate DCI connectivity. This POD does not run any specific DCI design and it uses to get visibility of control plane on MLAG out of any server connection.</li>
+</ul>
+<h3 id="eos-initial-configuration">EOS Initial Configuration<a class="headerlink" href="#eos-initial-configuration" title="Permanent link">#</a></h3>
+<p>Management interface of all Arista EOS devices are connected to a <code>Private Cloud</code> in our EVE-NG topology and they are all using the follwing address plan:</p>
+<ul>
+<li>Spine 01: <code>10.73.254.1</code></li>
+<li>Spine 02: <code>10.73.254.2</code></li>
+<li>Leaf 01A: <code>10.73.254.11</code></li>
+<li>Leaf 01B: <code>10.73.254.12</code></li>
+<li>Leaf 02A: <code>10.73.254.13</code></li>
+<li>Leaf02B: <code>10.73.254.14</code></li>
+<li>Border 01A: <code>10.73.254.15</code></li>
+<li>Border 01B: <code>10.73.254.16</code></li>
+<li>Leaf 03A: <code>10.73.254.17</code></li>
+<li>Leaf 04A: <code>10.73.254.18</code></li>
+<li>AGG01: <code>10.73.254.21</code></li>
+<li>AGG02: <code>10.73.254.22</code></li>
+</ul>
+<p>Initial configuration deployed to devices is based on the following short template:</p>
+<div class="highlight"><pre><span></span><code><span class="x">!</span>
+<span class="x">transceiver qsfp default-mode 4x10G</span>
+<span class="x">!</span>
+<span class="x">hostname </span><span class="cp">{{</span><span class="nv">hostname</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">ip name-server vrf MGMT 10.255.1.253</span>
+<span class="x">!</span>
+<span class="x">ntp local-interface vrf MGMT Management1</span>
+<span class="x">ntp server vrf MGMT 10.255.1.1 prefer</span>
+<span class="x">!</span>
+<span class="x">spanning-tree mode mstp</span>
+<span class="x">spanning-tree mst 0 priority 16384</span>
+<span class="x">!</span>
+<span class="x">no aaa root</span>
+<span class="x">!</span>
+<span class="x">username admin privilege 15 role network-admin secret sha512 </span><span class="cp">{{</span><span class="nv">password_sha512</span><span class="cp">}}</span><span class="x"></span>
+<span class="x">!</span>
+<span class="x">vrf instance MGMT</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet1</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet2</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet3</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet4</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet5</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet6</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet7</span>
+<span class="x">!</span>
+<span class="x">interface Ethernet8</span>
+<span class="x">!</span>
+<span class="x">interface Management1</span>
+<span class="x">   description oob_management</span>
+<span class="x">   vrf MGMT</span>
+<span class="x">   ip address </span><span class="cp">{{</span> <span class="nv">management_ip</span> <span class="cp">}}</span><span class="x">/24</span>
+<span class="x">!</span>
+<span class="x">ip routing</span>
+<span class="x">no ip routing vrf MGMT</span>
+<span class="x">!</span>
+<span class="x">management api http-commands</span>
+<span class="x">   no shutdown</span>
+<span class="x">   !</span>
+<span class="x">   vrf MGMT</span>
+<span class="x">      no shutdown</span>
+<span class="x">!</span>
+<span class="x">end</span>
+</code></pre></div>
+
+<h3 id="jumphost-configuration">Jumphost Configuration<a class="headerlink" href="#jumphost-configuration" title="Permanent link">#</a></h3>
+<p>Because our OOB network is completely isolated from our network, a jumphost will be configured to expose eAPI port for all EOS devices. <code>ens3</code> is configured in OOB network with ip address <code>10.73.254.253/24</code> and <a href="https://github.com/inetsix/demo-avd-evpn-eve-ng/blob/master/iptables-port-forward.sh">an <strong>IPtables</strong> configuration</a> is deployed to serve NAT.</p>
+<p>This script must be executed with root permissions. Script maps port <strong><code>443</code></strong> of EOS to a port on <strong><code>800x</code></strong> range.</p>
+<div class="highlight"><pre><span></span><code>$ cat expose-eapi.sh
+
+<span class="c1">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="s1">&#39;* Activate IP Forwarding&#39;</span>
+sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+
+<span class="nb">echo</span> <span class="s1">&#39;* Flush Current IPTables settings&#39;</span>
+iptables --flush
+iptables --delete-chain
+iptables --table nat --flush
+iptables --table nat --delete-chain
+
+<span class="nb">echo</span> <span class="s1">&#39;* Activate masquerading&#39;</span>
+
+iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ens2 -j MASQUERADE
+
+<span class="nb">echo</span> <span class="s1">&#39;* Activate eAPI forwarding with base port 800x&#39;</span>
+
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8001</span> -j DNAT --to-destination <span class="m">10</span>.73.254.1:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8002</span> -j DNAT --to-destination <span class="m">10</span>.73.254.2:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8011</span> -j DNAT --to-destination <span class="m">10</span>.73.254.11:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8012</span> -j DNAT --to-destination <span class="m">10</span>.73.254.12:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8013</span> -j DNAT --to-destination <span class="m">10</span>.73.254.13:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8014</span> -j DNAT --to-destination <span class="m">10</span>.73.254.14:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8015</span> -j DNAT --to-destination <span class="m">10</span>.73.254.15:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8016</span> -j DNAT --to-destination <span class="m">10</span>.73.254.16:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8017</span> -j DNAT --to-destination <span class="m">10</span>.73.254.17:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8018</span> -j DNAT --to-destination <span class="m">10</span>.73.254.18:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8021</span> -j DNAT --to-destination <span class="m">10</span>.73.254.21:443
+iptables -t nat -A PREROUTING -p tcp -i ens1 --dport <span class="m">8022</span> -j DNAT --to-destination <span class="m">10</span>.73.254.22:443
+
+<span class="nb">echo</span> <span class="s1">&#39;* Activate Forward&#39;</span>
+iptables -A FORWARD -p tcp -d <span class="m">10</span>.73.254.0/24 --dport <span class="m">443</span> -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+<span class="nb">echo</span> <span class="s1">&#39;* Process done&#39;</span>
+</code></pre></div>
+
+<p>You can validate everything is well configured with commands below:</p>
+<h4 id="check-nat-settings">Check NAT Settings<a class="headerlink" href="#check-nat-settings" title="Permanent link">#</a></h4>
+<p>It is important to validate NAT settings are all set as expected</p>
+<div class="highlight"><pre><span></span><code>$ sudo iptables -t nat -L -n
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> jumper:
+
+Chain PREROUTING <span class="o">(</span>policy ACCEPT<span class="o">)</span>
+target     prot opt <span class="nb">source</span>               destination
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8001 to:10.73.254.1:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8002 to:10.73.254.2:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8011 to:10.73.254.11:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8012 to:10.73.254.12:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8013 to:10.73.254.13:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8014 to:10.73.254.14:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8015 to:10.73.254.15:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8016 to:10.73.254.16:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8017 to:10.73.254.17:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8018 to:10.73.254.18:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8021 to:10.73.254.21:443
+DNAT       tcp  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0            tcp dpt:8022 to:10.73.254.22:443
+
+Chain INPUT <span class="o">(</span>policy ACCEPT<span class="o">)</span>
+target     prot opt <span class="nb">source</span>               destination
+
+Chain OUTPUT <span class="o">(</span>policy ACCEPT<span class="o">)</span>
+target     prot opt <span class="nb">source</span>               destination
+
+Chain POSTROUTING <span class="o">(</span>policy ACCEPT<span class="o">)</span>
+target     prot opt <span class="nb">source</span>               destination
+MASQUERADE  all  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0
+MASQUERADE  all  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0
+</code></pre></div>
+
+<h4 id="check-access-to-eapi">Check access to eAPI<a class="headerlink" href="#check-access-to-eapi" title="Permanent link">#</a></h4>
+<p>Once NAT as been correctly set, check you can reach your devices using jumphost address from your laptop</p>
+<div class="highlight"><pre><span></span><code>$ curl -i -k https://10.73.1.17:8001
+
+HTTP/1.1 <span class="m">301</span> Moved Permanently
+Server: nginx
+Date: Wed, <span class="m">27</span> May <span class="m">2020</span> <span class="m">08</span>:09:52 GMT
+Content-Type: text/html
+Content-Length: <span class="m">13</span>
+Connection: keep-alive
+Cache-control: no-store
+Cache-control: no-cache
+Cache-control: must-revalidate
+Cache-control: max-age<span class="o">=</span><span class="m">0</span>
+Cache-control: pre-check<span class="o">=</span><span class="m">0</span>
+Cache-control: post-check<span class="o">=</span><span class="m">0</span>
+Pragma: no-cache
+Location: https://10.73.1.17:8001/explorer.html
+X-Frame-Options: DENY
+Content-Security-Policy: frame-ancestors <span class="s1">&#39;none&#39;</span>
+
+Page redirect
+</code></pre></div>
+
+<h2 id="create-arista-validated-design-project">Create Arista Validated Design project.<a class="headerlink" href="#create-arista-validated-design-project" title="Permanent link">#</a></h2>
+<p>Ok, enough of lab building and we can start to play with Ansible and AVD collection.</p>
+<h3 id="create-a-repository">Create a repository<a class="headerlink" href="#create-a-repository" title="Permanent link">#</a></h3>
+<p>You can organize your work in many different way, but a structure I find useful is something like this:</p>
+<ul>
+<li>A folder for all your inventories with one sub-folder per inventory. An inventory folder contains all your variables for a given environment like <code>host_vars</code>, <code>group_vars</code>, <code>inventory.yml</code></li>
+<li>A folder to store all playbooks. So it is easy to reuse playbooks whatever the inventory is (if you use a coherent syntax)</li>
+<li>ansible.cfg at the root of this repository</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ tree -L <span class="m">3</span> -d
+.
+├── inventories
+│   ├── inetsix-cvp
+│   │   ├── group_vars
+│   │   ├── host_vars
+│   │   └── media
+│   └── inetsix-eapi
+│       ├── group_vars
+│       └── medias
+└── playbooks
+</code></pre></div>
+
+<p>From there, you can run ansible playbooks with following syntax (as an example) :</p>
+<div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/my-playbook -i inventories/inetsix-eapi
+</code></pre></div>
+
+<p>So to make it easy to start, you can clone this repository as baseline:</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/inetsix/demo-avd-evpn-eve-ng.git
+</code></pre></div>
+
+<h2 id="configure-arista-valdiated-design">Configure Arista Valdiated Design<a class="headerlink" href="#configure-arista-valdiated-design" title="Permanent link">#</a></h2>
+<p>Arista validated design can be installed in 2 different ways:</p>
+<ul>
+<li>Ansible Galaxy to get a stable version.</li>
+<li>Git to use latest development version.</li>
+</ul>
+<p>In this post we will only use ansible-galaxy command to install this collection. If you want to use very latest version, please refer to <a href="https://github.com/aristanetworks/ansible-avd#installation">Github repository</a> to see how to install using git.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># install python requirements</span>
+$ wget https://github.com/aristanetworks/ansible-avd/blob/devel/development/requirements.txt
+$ pip3 install -r requirements.txt
+
+<span class="c1"># install collection</span>
+$ ansible-galaxy collection install arista.avd
+</code></pre></div>
+
+<h3 id="configure-arista-validate-design-variables">Configure Arista Validate Design variables<a class="headerlink" href="#configure-arista-validate-design-variables" title="Permanent link">#</a></h3>
+<p>To generate content based on AVD collection, we have to configure 2 things:</p>
+<ul>
+<li>Inventory file (<code>inventory.yml</code>) to list devices in their respective groups</li>
+<li><code>group_vars/</code> files to provide all information required.</li>
+</ul>
+<blockquote>
+<p>Information in <code>inventory.yml</code> and within <code>group_vars</code> folder are linked all together. So when changing a hostname may require to edit couple of files.</p>
+</blockquote>
+<h3 id="configure-connection-information">Configure connection information<a class="headerlink" href="#configure-connection-information" title="Permanent link">#</a></h3>
+<p>In file <a href="https://github.com/inetsix/demo-avd-evpn-eve-ng/blob/master/inventories/inetsix-eapi/group_vars/all.yml"><code>inventories/inetsix-eapi/group_vars/all.yml</code></a>, use the following information:</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">ansible_connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpapi</span>
+<span class="nt">ansible_httpapi_port</span><span class="p">:</span> <span class="s">&#39;{{ansible_port}}&#39;</span>
+<span class="nt">ansible_httpapi_host</span><span class="p">:</span> <span class="s">&#39;{{</span><span class="nv"> </span><span class="s">ansible_host</span><span class="nv"> </span><span class="s">}}&#39;</span>
+<span class="nt">ansible_httpapi_use_ssl</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">ansible_httpapi_validate_certs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class="nt">ansible_network_os</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">eos</span>
+<span class="nt">ansible_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">ansible_ssh_pass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista123</span>
+<span class="nt">ansible_become</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+<span class="nt">ansible_become_method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">enable</span>
+
+<span class="nt">ansible_host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR JUMPHOST IP&gt;</span>
+</code></pre></div>
+
+<h3 id="configure-arista-valdiated-design-variables">Configure Arista Valdiated Design variables<a class="headerlink" href="#configure-arista-valdiated-design-variables" title="Permanent link">#</a></h3>
+<p>You can check <a href="../ansible-avd-config/">this post where we detail how to use and configure AVD</a> to build EVPN/VXLAN configuration. And you can also read <a href="https://github.com/aristanetworks/ansible-avd/tree/devel/ansible_collections/arista/avd">complete documentation from the project repository</a>.</p>
+<h3 id="create-a-playbook-to-deploy">Create a playbook to deploy<a class="headerlink" href="#create-a-playbook-to-deploy" title="Permanent link">#</a></h3>
+<p>To deploy configuration, we need to create a playbook under <code>playbooks/</code> folder. This playbook will do 4 different tasks:</p>
+<ul>
+<li>Build output directories.</li>
+<li>Transform EVPN data into YAML files per devices.</li>
+<li>Build configuration and documentation.</li>
+<li>Deploy configuration and do backup</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build Switch configuration</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
+  <span class="nt">collections</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd</span>
+  <span class="nt">tasks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build local folders</span>
+      <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">build</span><span class="p p-Indicator">]</span>
+      <span class="nt">import_role</span><span class="p">:</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd.build_output_folders</span>
+      <span class="nt">vars</span><span class="p">:</span>
+        <span class="nt">fabric_dir_name</span><span class="p">:</span> <span class="s">&#39;{{fabric_name}}&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">generate intend variables</span>
+      <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">build</span><span class="p p-Indicator">]</span>
+      <span class="nt">import_role</span><span class="p">:</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd.eos_l3ls_evpn</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">generate device intended config and documentation</span>
+      <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">build</span><span class="p p-Indicator">]</span>
+      <span class="nt">import_role</span><span class="p">:</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd.eos_cli_config_gen</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">deploy configuration to device</span>
+      <span class="nt">tags</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">deploy</span><span class="p p-Indicator">,</span> <span class="nv">never</span><span class="p p-Indicator">]</span>
+      <span class="nt">import_role</span><span class="p">:</span>
+         <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd.eos_config_deploy_eapi</span>
+</code></pre></div>
+
+<p>As you can see, we put 2 different <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html">ansible tags</a> to be more granular:</p>
+<ul>
+<li><strong><code>build</code></strong>: give us an option to just generate configuration and review offline all the config files.</li>
+<li><strong><code>deploy</code></strong>: is set to explicit and push your new configuration to device.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/avd-eapi-generic.yml -i inventories/inetsix-eapi/inventory.yml --tags build
+</code></pre></div>
+
+<p>Playbook will create all files and folder in your inventory and here is an output example:</p>
+<div class="highlight"><pre><span></span><code>tree -L <span class="m">3</span> -d
+.
+├── configlets
+├── cvp-debug-logs
+├── inventories
+│   └── inetsix-eapi
+│       ├── config_backup
+│       ├── documentation
+│       ├── group_vars
+│       └── intended
+├── output.variables
+└── playbooks
+</code></pre></div>
+
+<p>To push configuration to devices, just use the other tags:</p>
+<div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/avd-eapi-generic.yml -i inventories/inetsix-eapi/inventory.yml --tags <span class="s2">&quot;build, deploy&quot;</span>
+</code></pre></div>
+
+<h2 id="check-verification">Check &amp; Verification<a class="headerlink" href="#check-verification" title="Permanent link">#</a></h2>
+<blockquote>
+<p><strong>If it is first time devices activate arBgp, it is required to reboot topology</strong></p>
+</blockquote>
+<p>Connect to your devices and validate your configuration has been deployed:</p>
+<div class="highlight"><pre><span></span><code>AVD2-LEAF1A login: admin
+Password:
+
+AVD2-LEAF1A&gt;en
+
+AVD2-LEAF1A#show run
+! Command: show running-config
+! device: AVD2-LEAF1A <span class="o">(</span>vEOS, EOS-4.24.0F<span class="o">)</span>
+!
+! boot system flash:/vEOS-lab.swi
+!
+vlan internal order ascending range <span class="m">1006</span> <span class="m">1199</span>
+!
+transceiver qsfp default-mode 4x10G
+!
+<span class="o">[</span>... output truncated ...<span class="o">]</span>
+</code></pre></div>
+
+<p>You can also check LLDP neighbor:</p>
+<div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show lldp neighbors
+Last table change time   : 2 days, 20:37:13 ago
+Number of table inserts  : 25
+Number of table deletes  : 9
+Number of table drops    : 0
+Number of table age-outs : 0
+
+Port       Neighbor Device ID               Neighbor Port ID           TTL
+Et1        AVD2-SPINE1                      Ethernet1                  120
+Et2        AVD2-SPINE2                      Ethernet1                  120
+Et3        AVD2-LEAF1B                      Ethernet3                  120
+Et4        AVD2-LEAF1B                      Ethernet4                  120
+Et5        AVD2-AGG01                       Ethernet1                  120
+Ma1        AVD2-BL01A                       Management1                120
+Ma1        AVD2-LEAF2A                      Management1                120
+Ma1        AVD2-LEAF3A                      Management1                120
+Ma1        AVD2-AGG01                       Management1                120
+Ma1        AVD2-BL01B                       Management1                120
+Ma1        AVD2-LEAF4A                      Management1                120
+Ma1        AVD2-AGG02                       Management1                120
+Ma1        AVD2-LEAF2B                      Management1                120
+Ma1        AVD2-LEAF1B                      Management1                120
+Ma1        AVD2-SPINE2                      Management1                120
+Ma1        AVD2-SPINE1                      Management1                120
+</code></pre></div>
+
+<p>Meantime, MLAG should be all set:</p>
+<div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show mlag
+MLAG Configuration:
+domain-id              :          AVD2_LEAF1
+local-interface        :            Vlan4094
+peer-address           :        <span class="m">10</span>.255.252.1
+peer-link              :       Port-Channel3
+hb-peer-address        :        <span class="m">10</span>.73.254.12
+hb-peer-vrf            :                MGMT
+peer-config            :          consistent
+
+MLAG Status:
+state                  :              Active
+negotiation status     :           Connected
+peer-link status       :                  Up
+local-int status       :                  Up
+system-id              :   0e:1d:c0:f0:bd:d1
+dual-primary detection :          Configured
+
+MLAG Ports:
+Disabled               :                   <span class="m">0</span>
+Configured             :                   <span class="m">0</span>
+Inactive               :                   <span class="m">0</span>
+Active-partial         :                   <span class="m">0</span>
+Active-full            :                   <span class="m">1</span>
+
+AVD2-LEAF1A#show mlag interfaces
+                                                                   local/remote
+  mlag     desc                       state     <span class="nb">local</span>     remote         status
+-------- -------------------- --------------- --------- ---------- ------------
+     <span class="m">5</span>     AVD2_L2LEAF1_Po1     active-full       Po5        Po5          up/up
+AVD2-LEAF1A#
+</code></pre></div>
+
+<p>Based on our setup, you can also check that L3LEAF to AGG devices are well configured:</p>
+<div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show inter description| grep AGG
+Et5                            up             up                 AVD2-AGG01_Ethernet1
+AVD2-LEAF1A#show lacp neighbor
+State: A = Active, P = Passive; S=ShortTimeout, L=LongTimeout;
+       G = Aggregable, I = Individual; s+=InSync, s-=OutOfSync;
+       C = Collecting, X = state machine expired,
+       D = Distributing, d = default neighbor state
+                 |                        Partner
+ Port    Status  | Sys-id                    Port#   State     OperKey  PortPri
+------ ----------|------------------------- ------- --------- --------- -------
+Port Channel Port-Channel3:
+ Et3     Bundled | 8000,0c-1d-c0-f4-7b-39        3   ALGs+CD    0x0003    32768
+ Et4     Bundled | 8000,0c-1d-c0-f4-7b-39        4   ALGs+CD    0x0003    32768
+Port Channel Port-Channel5*:
+ Et5     Bundled | 8000,0c-1d-c0-90-13-79        1   ALGs+CD    0x0001    32768
+
+* - Only local interfaces for MLAGs are displayed. Connect to the peer to
+    see the state for peer interfaces.
+</code></pre></div>
+
+<p>And then check your BGP sessions:</p>
+<ul>
+<li>IPv4 Underlay sessions</li>
+</ul>
+<div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show bgp ipv4 unicast summary
+BGP summary information for VRF default
+Router identifier 192.168.255.3, local AS number 65101
+Neighbor Status Codes: m - Under maintenance
+  Neighbor         V  AS           MsgRcvd   MsgSent  InQ OutQ  Up/Down State   PfxRcd PfxAcc
+  10.255.251.1     4  65101           4910      4894    0    0    2d20h Estab   14     14
+  172.31.255.0     4  65001           4907      4899    0    0    2d21h Estab   11     11
+  172.31.255.2     4  65001           4897      4892    0    0    2d21h Estab   11     11
+</code></pre></div>
+
+<ul>
+<li>EVPN Overlay sessions</li>
+</ul>
+<div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show bgp evpn summary
+BGP summary information for VRF default
+Router identifier 192.168.255.3, local AS number 65101
+Neighbor Status Codes: m - Under maintenance
+  Neighbor         V  AS           MsgRcvd   MsgSent  InQ OutQ  Up/Down State   PfxRcd PfxAcc
+  192.168.255.1    4  65001           4931      4914    0    0    2d21h Estab   22     22
+  192.168.255.2    4  65001           4938      4939    0    0    2d21h Estab   22     22
+</code></pre></div>
+
+<p>Then you are all set to continue your journey with Arista Validated design</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://www.arista.com/en/solutions/design-guides">Arista Recommended design Guide</a></li>
+<li><a href="https://github.com/aristanetworks/ansible-avd/">Arista Validated Deisgn</a></li>
+<li><a href="https://www.eve-ng.net/">EVE-NG website</a></li>
+<li><a href="../ansible-avd-config/">How to configure AVD</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../ansible-avd-config/" title="Arista AVD Configuration overview" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Arista AVD Configuration overview
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../how-to/ci-to-start-docker-and-validate-code/" title="Continuous Intgration with Docker interactions" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Continuous Intgration with Docker interactions
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["instant"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
