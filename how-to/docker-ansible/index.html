@@ -17,7 +17,7 @@
         <meta name="author" content="TiTom73">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
     
     
       
@@ -25,25 +25,21 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.71dfd922.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a2408e81.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.616af814.min.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#546e7a">
       
     
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
     
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -52,10 +48,7 @@
   </head>
   
   
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+    <body dir="ltr">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -425,7 +418,7 @@
                   
                 
                 
-                <h1 id="ansible-using-docker">Ansible using docker<a class="headerlink" href="#ansible-using-docker" title="Permanent link">&para;</a></h1>
+                <h1 id="ansible-using-docker">Ansible using docker<a class="headerlink" href="#ansible-using-docker" title="Permanent link">#</a></h1>
 <p>This how-to explains how to configure docker and your shell environment to execute ansible within a container and not from your system. It is useful to use this approach to validate code with different <code>ansible</code> version.</p>
 <ul>
 <li><strong>Github repository</strong> : <a href="https://github.com/titom73/docker-ansible"><code>titom73/docker-ansible</code></a></li>
@@ -439,7 +432,7 @@
 <li>Use AWS and Junos componants: <code>aws cli</code>, <code>junos-eznc</code>, <code>Juniper.junos</code> ansible module</li>
 </ul>
 <p>Just add these aliases to your <code>~/.{bash|zsh|...}_aliases</code> in order to use ansible as it where installed on your computer.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5
 base_ansible<span class="o">()</span> <span class="o">{</span>
         docker run -it --rm <span class="se">\</span>
             --volume <span class="nv">$SSH_AUTH_SOCK</span>:/ssh-agent <span class="se">\</span>
@@ -451,16 +444,14 @@ base_ansible<span class="o">()</span> <span class="o">{</span>
 <span class="o">}</span>
 </code></pre></div>
 
-
 <p>Once this bash function is available, you can build you aliases to mimic ansible:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">alias</span> ansible-update<span class="o">=</span><span class="s1">&#39;docker pull inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION}&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span> ansible-update<span class="o">=</span><span class="s1">&#39;docker pull inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION}&#39;</span>
 <span class="nb">alias</span> ansible-shell<span class="o">=</span><span class="s1">&#39;base_ansible bash&#39;</span>
 <span class="nb">alias</span> <span class="nv">ansible</span><span class="o">=</span><span class="s1">&#39;base_ansible ansible&#39;</span>
 <span class="nb">alias</span> ansible-playbook<span class="o">=</span><span class="s1">&#39;base_ansible ansible-playbook&#39;</span>
 <span class="nb">alias</span> ansible-vault<span class="o">=</span><span class="s1">&#39;base_ansible ansible-vault&#39;</span>
 <span class="nb">alias</span> ansible-galaxy<span class="o">=</span><span class="s1">&#39;base_ansible ansible-galaxy&#39;</span>
 </code></pre></div>
-
 
 <p>The <code>export</code> statement gives option to specify which version of ansible we want to use. This version is equal to <a href="https://cloud.docker.com/u/inetsix/repository/docker/inetsix/docker-ansible/tags">tags</a> defined during the build</p>
 <p>This docker image is built with the following tags (12/2018) for both <code>alpine</code> and Debian <code>jessie</code> OS:</p>
@@ -472,9 +463,9 @@ base_ansible<span class="o">()</span> <span class="o">{</span>
 <li><code>2.6</code></li>
 <li><code>2.7</code></li>
 </ul>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>Simply use your aliases, and you can override ansible default version when required</p>
-<div class="codehilite"><pre><span></span><code>$ <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5 
+<div class="highlight"><pre><span></span><code>$ <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5 
 $ docker-ansible --version 
 ansible <span class="m">2</span>.5.2
   config <span class="nv">file</span> <span class="o">=</span> /Users/titom73/Scripting/ansible.projects/ansible.training.phase2/ansible.cfg
@@ -485,18 +476,16 @@ ansible <span class="m">2</span>.5.2
   python <span class="nv">version</span> <span class="o">=</span> <span class="m">2</span>.7.14 <span class="o">(</span>default, Apr <span class="m">27</span> <span class="m">2018</span>, <span class="m">09</span>:37:08<span class="o">)</span> <span class="o">[</span>GCC <span class="m">4</span>.9.2<span class="o">]</span>
 </code></pre></div>
 
-
-<h2 id="optional-parameters">Optional parameters<a class="headerlink" href="#optional-parameters" title="Permanent link">&para;</a></h2>
-<h3 id="export-aws-cli-parameters">Export AWS CLI parameters<a class="headerlink" href="#export-aws-cli-parameters" title="Permanent link">&para;</a></h3>
+<h2 id="optional-parameters">Optional parameters<a class="headerlink" href="#optional-parameters" title="Permanent link">#</a></h2>
+<h3 id="export-aws-cli-parameters">Export AWS CLI parameters<a class="headerlink" href="#export-aws-cli-parameters" title="Permanent link">#</a></h3>
 <p>Assuming you have configured your AWS CLI, you may export your parameters with the following variables:</p>
 <p>On your local shell:</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">AWS_DEFAULT_REGION</span><span class="o">=</span><span class="s1">&#39;eu-west-2&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">AWS_DEFAULT_REGION</span><span class="o">=</span><span class="s1">&#39;eu-west-2&#39;</span>
 <span class="nb">export</span> <span class="nv">AWS_PROFILE</span><span class="o">=</span><span class="s1">&#39;your_aws_profile&#39;</span>
 </code></pre></div>
 
-
 <p>Then, these variables are exposed to your docker instance by using <code>--env</code> keyword. If they are not set, then, nothing is export to your container.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5
 base_ansible<span class="o">()</span> <span class="o">{</span>
         docker run -it --rm <span class="se">\</span>
             --env <span class="nv">ANSIBLE_REMOTE_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span> <span class="se">\</span>
@@ -512,10 +501,9 @@ base_ansible<span class="o">()</span> <span class="o">{</span>
 <span class="o">}</span>
 </code></pre></div>
 
-
-<h3 id="overwrite-ansible-commands">Overwrite ansible commands<a class="headerlink" href="#overwrite-ansible-commands" title="Permanent link">&para;</a></h3>
+<h3 id="overwrite-ansible-commands">Overwrite ansible commands<a class="headerlink" href="#overwrite-ansible-commands" title="Permanent link">#</a></h3>
 <p>If for some reasons, you need to use your installed ansible version, just use <code>\\</code> in front of any ansible command like below:</p>
-<div class="codehilite"><pre><span></span><code>$ <span class="se">\a</span>nsible --version
+<div class="highlight"><pre><span></span><code>$ <span class="se">\a</span>nsible --version
 ansible <span class="m">2</span>.5.1
   config <span class="nv">file</span> <span class="o">=</span> /Users/titom73/Scripting/ansible.projects/ansible.training.phase2/ansible.cfg
   configured module search <span class="nv">path</span> <span class="o">=</span> <span class="o">[</span>u<span class="s1">&#39;/Users/titom73/.ansible/plugins/modules&#39;</span>,<span class="se">\</span>
@@ -606,7 +594,7 @@ ansible <span class="m">2</span>.5.2
       <script>
         app = initialize({
           base: "../..",
-          features: [],
+          features: ["instant"],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)

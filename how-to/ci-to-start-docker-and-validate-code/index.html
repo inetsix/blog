@@ -17,7 +17,7 @@
         <meta name="author" content="TiTom73">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
     
     
       
@@ -25,25 +25,21 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.71dfd922.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a2408e81.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.616af814.min.css">
-      
-      
-        
-        
-        <meta name="theme-color" content="#546e7a">
       
     
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
     
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -52,10 +48,7 @@
   </head>
   
   
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+    <body dir="ltr">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -371,28 +364,27 @@
                   
                 
                 
-                <h1 id="continuous-intgration-with-docker-interactions">Continuous Intgration with Docker interactions<a class="headerlink" href="#continuous-intgration-with-docker-interactions" title="Permanent link">&para;</a></h1>
+                <h1 id="continuous-intgration-with-docker-interactions">Continuous Intgration with Docker interactions<a class="headerlink" href="#continuous-intgration-with-docker-interactions" title="Permanent link">#</a></h1>
 <p>This article explains how to configure gitlabci runners to run your code and provision target to validate your code.</p>
 <blockquote>
 <p>Note: <a href="https://docs.docker.com/install/">Docker</a> is a requirement on your host device to both run gitlab runner and your project.</p>
 </blockquote>
-<h2 id="configure-a-gitlab-ci-runner">Configure a gitlab ci runner<a class="headerlink" href="#configure-a-gitlab-ci-runner" title="Permanent link">&para;</a></h2>
+<h2 id="configure-a-gitlab-ci-runner">Configure a gitlab ci runner<a class="headerlink" href="#configure-a-gitlab-ci-runner" title="Permanent link">#</a></h2>
 <p>First step is to configure a gitlab runner and connect it to your projet. Gitlab provides a docker image to deploy their runner. It is available on this <a href="https://docs.gitlab.com/ee/ci/README.html">page</a>.</p>
 <p>A default command to start a runner is the following:</p>
-<div class="codehilite"><pre><span></span><code>$ docker run -d 
+<div class="highlight"><pre><span></span><code>$ docker run -d 
    --name gitlab-runner <span class="se">\</span>
    --restart always <span class="se">\</span>
    -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
    gitlab/gitlab-runner:latest
 </code></pre></div>
 
-
 <p>This command starts a docker gitlabci runner and share following folder with host filesystem:</p>
 <ul>
 <li><code>/var/run/docker.sock</code> is bind to the same path within container</li>
 </ul>
 <p>In this scenario, configuration is not permanent and will be deleted after we stop the container. And especially configuration related to gitlabci service. To make it permanent, add following line to previous command:</p>
-<div class="codehilite"><pre><span></span><code>$ mkdir -p /home/docker/gitlab-runner
+<div class="highlight"><pre><span></span><code>$ mkdir -p /home/docker/gitlab-runner
 
 $ docker run -d 
    --name gitlab-runner <span class="se">\</span>
@@ -402,10 +394,9 @@ $ docker run -d
    gitlab/gitlab-runner:latest
 </code></pre></div>
 
-
 <p>Then, we have to register runner to your gitlab project. Go to <code>https://gitlab.your.server.com/your-namespace/your-project/settings/ci_cd</code> and note both your <strong><code>token</code></strong> and <strong><code>URL</code></strong></p>
 <p>Once you have these information, we can register the runner with following command:</p>
-<div class="codehilite"><pre><span></span><code>docker <span class="nb">exec</span> -it gitlab-runner gitlab-runner register <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it gitlab-runner gitlab-runner register <span class="se">\</span>
       --non-interactive <span class="se">\</span>
       --url <span class="nv">$gitlab</span>.your.server.com$ <span class="se">\</span>
       --registration-token <span class="nv">$TOKEN</span>$ <span class="se">\</span>
@@ -489,7 +480,7 @@ $ docker run -d
       <script>
         app = initialize({
           base: "../..",
-          features: [],
+          features: ["instant"],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)
