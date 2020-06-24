@@ -24,18 +24,6 @@ extra_css:
 use_directory_urls: true
 markdown_extensions:
   - smarty
-  - toc:
-      permalink: true
-  - sane_lists
-  - admonition
-  - codehilite:
-      guess_lang: false
-
-  - search:
-      separator: '[\s\-\.]+'
-
-markdown_extensions:
-  - smarty
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -52,9 +40,13 @@ markdown_extensions:
   - pymdownx.tilde
   - fontawesome_markdown
   - admonition
-  - codehilite:
-      guess_lang: true
   - toc:
       separator: "-"
       permalink: "#"
       baselevel: 1
+  - toc:
+      permalink: true
+  - sane_lists
+  - admonition
+  - codehilite:
+      guess_lang: true

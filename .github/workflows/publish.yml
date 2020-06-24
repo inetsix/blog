@@ -1,8 +1,10 @@
-name: Mkdocs
+name: Update website
 on:
   push:
     branches:
       - 'content'
+  schedule:
+    - cron:  '0 0 * * *'
 jobs:
   'doc':
     name: 'Update Public documentation'
@@ -13,6 +15,9 @@ jobs:
         uses: actions/setup-python@v1.2.0
         with:
           python-version: '3.x'
+      - name: 'Build mkdocs content to site folder'
+        run: |
+            python .github/collector.py
       - name: 'Build mkdocs content to site folder'
         run: |
             pip install -r requirements.txt
