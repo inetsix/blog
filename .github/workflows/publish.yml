@@ -17,7 +17,6 @@ jobs:
         run: |
             pip install -r requirements.txt
             python .github/collector.py
-            (cd docs/ && wget --quiet https://raw.githubusercontent.com/titom73/k8s-journey/master/docs/tips.md)
       - name: 'Build mkdocs content to site folder'
         run: |
             mkdocs build -f mkdocs.yml
