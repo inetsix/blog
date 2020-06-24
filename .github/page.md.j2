@@ -1,0 +1,17 @@
+# Github Repositories
+
+## Personal Repositories
+
+|  Project  |  Description  | Last activity |
+|------------------|---------------|-------------|
+{% for project in projects['titom73']|sort(reverse=true,attribute='last_commit') %}
+|  [{{project['project_name']}}]({{project['homepage']}}) | {% if project['description'] != 'None'  %} {{project['description']}} {% else %} N/A {% endif %} | {{project['last_commit']|truncate(10,end='')}} |
+{% endfor %}
+
+## Inetsix Repositories
+
+|  Project  |  Description  | Last activity |
+|------------------|---------------|-------------|
+{% for project in projects['inetsix']|sort(reverse=true,attribute='last_commit') %}
+|  [{{project['project_name']}}]({{project['homepage']}}) | {% if project['description'] != 'None'  %} {{project['description']}} {% else %} N/A {% endif %} | {{project['last_commit']|truncate(10,end='')}} |
+{% endfor %}
