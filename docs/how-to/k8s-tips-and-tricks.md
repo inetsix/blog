@@ -1,5 +1,7 @@
 # Kubernetes Tips & Tricks
 
+From [__titom73/k8s-journey__](https://github.com/titom73/k8s-journey) repository
+
 ## Tips & general settings
 
 - Get a shell in namespace:
