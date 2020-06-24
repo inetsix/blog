@@ -11,7 +11,7 @@
         <meta name="description" content="A curated list of awesome Python frameworks, libraries and software">
       
       
-        <link rel="canonical" href="https://www.inetsix.net/yaml-jinja/">
+        <link rel="canonical" href="https://www.inetsix.net/tips/">
       
       
         <meta name="author" content="TiTom73">
@@ -21,7 +21,7 @@
     
     
       
-        <title>YAML Structures in Jinja2 - Inetsix doc repository</title>
+        <title>Tips & Tricks - Inetsix doc repository</title>
       
     
     
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#yaml-structures-in-jinja2" class="md-skip">
+        <a href="#tips-tricks" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              YAML Structures in Jinja2
+              Tips & Tricks
             
           </span>
         </div>
@@ -206,18 +206,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../tips/" title="Tips & Tricks" class="md-nav__link">
-      Tips & Tricks
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -229,14 +217,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        YAML Structures in Jinja2
+        Tips & Tricks
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="YAML Structures in Jinja2" class="md-nav__link md-nav__link--active">
-      YAML Structures in Jinja2
+    <a href="./" title="Tips & Tricks" class="md-nav__link md-nav__link--active">
+      Tips & Tricks
     </a>
     
       
@@ -255,24 +243,86 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic" class="md-nav__link">
-    Basic
+  <a href="#tips-general-settings" class="md-nav__link">
+    Tips &amp; general settings
   </a>
   
-    <nav class="md-nav" aria-label="Basic">
+    <nav class="md-nav" aria-label="Tips &amp; general settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generic-key-allocation" class="md-nav__link">
-    Generic key allocation
+  <a href="#shell-integration" class="md-nav__link">
+    Shell integration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#structured-key-allocation" class="md-nav__link">
-    Structured key allocation
+  <a href="#get-a-shell-in-a-k8s-container" class="md-nav__link">
+    Get a shell in a K8S container
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-switcher" class="md-nav__link">
+    Namespace Switcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-http-load-balancing" class="md-nav__link">
+    Test HTTP Load Balancing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill-pod" class="md-nav__link">
+    Kill POD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-replicaset-pod-relations" class="md-nav__link">
+    Deployment / Replicaset / POD relations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-deployment" class="md-nav__link">
+    Scale deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instantiate-scale-up-process" class="md-nav__link">
+    Instantiate scale up process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-k8s-status" class="md-nav__link">
+    Check K8S status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-with-server-requests" class="md-nav__link">
+    Check with Server requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -282,71 +332,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#list-management" class="md-nav__link">
-    List Management
+  <a href="#tricks" class="md-nav__link">
+    Tricks
   </a>
   
-    <nav class="md-nav" aria-label="List Management">
+    <nav class="md-nav" aria-label="Tricks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#yaml-list" class="md-nav__link">
-    YAML List
+  <a href="#dns-configuration" class="md-nav__link">
+    DNS configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#yaml-dictionary" class="md-nav__link">
-    YAML Dictionary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#yaml-maps" class="md-nav__link">
-    YAML Maps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-jinja2-syntax" class="md-nav__link">
-    Advanced Jinja2 syntax
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Jinja2 syntax">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-variable-in-a-loop" class="md-nav__link">
-    Update variable in a Loop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-ipaddr-within-jinja2-template" class="md-nav__link">
-    Use IPaddr within Jinja2 template
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manage-jinja2-rendering-indentation" class="md-nav__link">
-    Manage Jinja2 rendering indentation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loop-management" class="md-nav__link">
-    Loop management
+  <a href="#issue-with-dns-resolution-on-alpine" class="md-nav__link">
+    Issue with DNS resolution on Alpine
   </a>
   
 </li>
@@ -360,6 +362,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../yaml-jinja/" title="YAML Structures in Jinja2" class="md-nav__link">
+      YAML Structures in Jinja2
+    </a>
   </li>
 
     
@@ -509,24 +523,86 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic" class="md-nav__link">
-    Basic
+  <a href="#tips-general-settings" class="md-nav__link">
+    Tips &amp; general settings
   </a>
   
-    <nav class="md-nav" aria-label="Basic">
+    <nav class="md-nav" aria-label="Tips &amp; general settings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generic-key-allocation" class="md-nav__link">
-    Generic key allocation
+  <a href="#shell-integration" class="md-nav__link">
+    Shell integration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#structured-key-allocation" class="md-nav__link">
-    Structured key allocation
+  <a href="#get-a-shell-in-a-k8s-container" class="md-nav__link">
+    Get a shell in a K8S container
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-switcher" class="md-nav__link">
+    Namespace Switcher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-http-load-balancing" class="md-nav__link">
+    Test HTTP Load Balancing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill-pod" class="md-nav__link">
+    Kill POD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-replicaset-pod-relations" class="md-nav__link">
+    Deployment / Replicaset / POD relations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-deployment" class="md-nav__link">
+    Scale deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instantiate-scale-up-process" class="md-nav__link">
+    Instantiate scale up process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-k8s-status" class="md-nav__link">
+    Check K8S status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-with-server-requests" class="md-nav__link">
+    Check with Server requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -536,71 +612,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#list-management" class="md-nav__link">
-    List Management
+  <a href="#tricks" class="md-nav__link">
+    Tricks
   </a>
   
-    <nav class="md-nav" aria-label="List Management">
+    <nav class="md-nav" aria-label="Tricks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#yaml-list" class="md-nav__link">
-    YAML List
+  <a href="#dns-configuration" class="md-nav__link">
+    DNS configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#yaml-dictionary" class="md-nav__link">
-    YAML Dictionary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#yaml-maps" class="md-nav__link">
-    YAML Maps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-jinja2-syntax" class="md-nav__link">
-    Advanced Jinja2 syntax
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Jinja2 syntax">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-variable-in-a-loop" class="md-nav__link">
-    Update variable in a Loop
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-ipaddr-within-jinja2-template" class="md-nav__link">
-    Use IPaddr within Jinja2 template
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manage-jinja2-rendering-indentation" class="md-nav__link">
-    Manage Jinja2 rendering indentation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loop-management" class="md-nav__link">
-    Loop management
+  <a href="#issue-with-dns-resolution-on-alpine" class="md-nav__link">
+    Issue with DNS resolution on Alpine
   </a>
   
 </li>
@@ -622,7 +650,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/inetsix/blog/edit/master/docs/yaml-jinja.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/inetsix/blog/edit/master/docs/tips.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -630,220 +658,223 @@
                   
                 
                 
-                <h1 id="yaml-structures-in-jinja2">YAML Structures in Jinja2<a class="headerlink" href="#yaml-structures-in-jinja2" title="Permanent link">&para;</a></h1>
-<p>Data structure to use <code>YAML</code> with <code>JINJA2</code> templates. <code>YAML</code> keeps data stored as a map containing keys and values associated to those keys.</p>
-<h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<h3 id="generic-key-allocation">Generic key allocation<a class="headerlink" href="#generic-key-allocation" title="Permanent link">&para;</a></h3>
-<p><code>YAML</code> input data structure</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">time_zone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Europe/Paris</span>
-<span class="nt">hostname</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myDevice</span>
-<span class="nt">comment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">“This device is a fake one”</span>
-</code></pre></div>
-
-<p><code>JINJA2</code> to consume <code>YAML</code> data structure </p>
-<div class="highlight"><pre><span></span><code>system {
-{% if time_zone is defined %}
-time-zone {{ time_zone }};
-{% endif %}
-</code></pre></div>
-
-<h3 id="structured-key-allocation">Structured key allocation<a class="headerlink" href="#structured-key-allocation" title="Permanent link">&para;</a></h3>
-<p>YAML will consider lines prefixed with more spaces than parent key are contained inside it</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">routing_policy</span><span class="p">:</span>
-  <span class="nt">communities</span><span class="p">:</span>
-    <span class="nt">myCommunity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">target:99:1</span>
-    <span class="nt">tenant2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">target:99:2</span>
-</code></pre></div>
-
-<p>Data structure similar to this YAML representation is :</p>
-<div class="highlight"><pre><span></span><code><span class="n">routing_policy</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;communities&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;myCommunity&quot;</span><span class="p">:</span> <span class="s2">&quot;target:99:1&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;tenant2&quot;</span><span class="p">:</span> <span class="s2">&quot;target:99:2&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<h2 id="list-management">List Management<a class="headerlink" href="#list-management" title="Permanent link">&para;</a></h2>
-<h3 id="yaml-list">YAML List<a class="headerlink" href="#yaml-list" title="Permanent link">&para;</a></h3>
-<p>Assuming following data structure in <code>YAML</code></p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">ntp_servers</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span>
-</code></pre></div>
-
-<p>Access data from JINJA2 can be done with the following code:</p>
-<div class="highlight"><pre><span></span><code>{% for ntp_server in ntp_servers %}
-  server {{ ntp_server }};
-{% endfor %}
-</code></pre></div>
-
-<p>Data structure similar to this YAML representation is :</p>
-<div class="highlight"><pre><span></span><code><span class="n">ntp_servers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="s1">&#39;4.4.4.4&#39;</span><span class="p">]</span>
-</code></pre></div>
-
-<h3 id="yaml-dictionary">YAML Dictionary<a class="headerlink" href="#yaml-dictionary" title="Permanent link">&para;</a></h3>
-<p>Assuming following data structure in <code>YAML</code></p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">vlans</span><span class="p">:</span> 
-  <span class="nt">10</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name1</span>
-  <span class="nt">20</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name2</span>
-  <span class="nt">30</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name3</span>
-</code></pre></div>
-
-<p>Access data from JINJA2 can be done with the following code:</p>
-<div class="highlight"><pre><span></span><code>{% for vlan_id, name in vlans.items() %}
-     vlan {{ vlan_id }}
-     name {{ name }}
-{% endfor %}
-</code></pre></div>
-
-<p>Data structure similar to this YAML representation is :</p>
-<div class="highlight"><pre><span></span><code><span class="n">vlans</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">:</span> <span class="s2">&quot;name1&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span> <span class="s2">&quot;name2&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">:</span> <span class="s2">&quot;name3&quot;</span><span class="p">}</span>
-</code></pre></div>
-
-<h3 id="yaml-maps">YAML Maps<a class="headerlink" href="#yaml-maps" title="Permanent link">&para;</a></h3>
-<p>Assuming following data structure in <code>YAML</code></p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">interfaces</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;ge-0/0/0&quot;</span>
-    <span class="nt">descr</span><span class="p">:</span> <span class="s">&quot;Blah&quot;</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;ge-0/0/1&quot;</span>
-    <span class="nt">descr</span><span class="p">:</span> <span class="s">&quot;comment&quot;</span>
-</code></pre></div>
-
-<p>Access data from JINJA2 can be done with the following code:</p>
-<div class="highlight"><pre><span></span><code>{% for interface in interfaces %}
-    {{interface.name}} {
-        description {{interface.descr}};
-          vlan-tagging;
-{% endfor %}
-</code></pre></div>
-
-<p>Data structure similar to this YAML representation is :</p>
-<div class="highlight"><pre><span></span><code><span class="n">interfaces</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ge-0/0/0&quot;</span><span class="p">,</span> <span class="s2">&quot;descr&quot;</span><span class="p">:</span> <span class="s2">&quot;Blah&quot;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ge-0/0/1&quot;</span><span class="p">,</span> <span class="s2">&quot;descr&quot;</span><span class="p">:</span> <span class="s2">&quot;comment&quot;</span><span class="p">}]</span>
-</code></pre></div>
-
-<h2 id="advanced-jinja2-syntax">Advanced Jinja2 syntax<a class="headerlink" href="#advanced-jinja2-syntax" title="Permanent link">&para;</a></h2>
-<h3 id="update-variable-in-a-loop">Update variable in a Loop<a class="headerlink" href="#update-variable-in-a-loop" title="Permanent link">&para;</a></h3>
-<p>Syntax below allows user to update value of a variable within a loop and access to it after in a different jinja2 block:</p>
-<div class="highlight"><pre><span></span><code>{% set ns = namespace (dev_state = &quot;disable&quot;) %}
-
-{% for portname, portlist in topo[inventory_hostname].iteritems() %}
-  {% if portlist.state == &quot;enable&quot; %}
-    {% set ns.dev_state = &quot;enable&quot; %}
-  {% endif %}
-{% endfor %}
-
-status: {{ns.dev_state|default(&quot;enable&quot;)}}
-</code></pre></div>
-
-<h3 id="use-ipaddr-within-jinja2-template">Use IPaddr within Jinja2 template<a class="headerlink" href="#use-ipaddr-within-jinja2-template" title="Permanent link">&para;</a></h3>
-<p>Assuming following <code>yaml</code> definition:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-<span class="nt">underlay</span><span class="p">:</span>
-  <span class="nt">networks</span><span class="p">:</span>
-    <span class="nt">loopbacks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.0/16</span>
-</code></pre></div>
-
-<p>Jinja gives option to build IP address within <code>loopback</code> network with following syntax where <code>id</code> is the idth in the network:</p>
-<div class="highlight"><pre><span></span><code>loopback_ip: {{ underlay.networks.loopbacks | ipaddr(id) | ipaddr(&#39;address&#39;) }}
-</code></pre></div>
-
-<p>Another example:</p>
-<p><code>{{ tenant.interconnect_prefix | ipaddr(6)}}</code> combined with <code>interconnect_prefix: 172.25.10.16/28</code> resulst in <code>172.25.10.22</code></p>
-<h3 id="manage-jinja2-rendering-indentation">Manage Jinja2 rendering indentation<a class="headerlink" href="#manage-jinja2-rendering-indentation" title="Permanent link">&para;</a></h3>
-<p>Jinja2 can manage whitespace and tabular indentation with <code>lstrip_blocks</code> and <code>trim_blocks</code> options:</p>
+                <h1 id="tips-tricks">Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permanent link">&para;</a></h1>
+<h2 id="tips-general-settings">Tips &amp; general settings<a class="headerlink" href="#tips-general-settings" title="Permanent link">&para;</a></h2>
+<h3 id="shell-integration">Shell integration<a class="headerlink" href="#shell-integration" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>trim_blocks</code>: If this is set to <code>True</code> the first newline after a block is removed (block, not variable tag!). Defaults to <code>False</code>.</li>
-<li><code>lstrip_blocks</code>: If this is set to <code>True</code> leading spaces and tabs are stripped from the start of a line to a block. Defaults to <code>False</code>.</li>
+<li>Plugin for <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl">oh-my-zsh</a></li>
 </ul>
-<p>To manage these options, just put this line in your template:</p>
-<div class="highlight"><pre><span></span><code>#jinja2: lstrip_blocks: &quot;True (or False)&quot;, trim_blocks: &quot;True (or False)&quot;
-...
+<div class="highlight"><pre><span></span><code>vim ~/.zshrc
+<span class="nv">plugins</span><span class="o">=(</span>... kubectl<span class="o">)</span>
 </code></pre></div>
 
-<p><strong>Example</strong></p>
-<p>Using this template:</p>
-<div class="highlight"><pre><span></span><code>{% for host in groups[&#39;webservers&#39;] %}
-    {% if inventory_hostname in hostvars[host][&#39;ansible_fqdn&#39;] %}
-{{ hostvars[host][&#39;ansible_default_ipv4&#39;][&#39;address&#39;] }} {{ hostvars[host][&#39;ansible_fqdn&#39;] }} {{ hostvars[host][&#39;inventory_hostname&#39;] }} MYSELF
-    {% else %}
-{{ hostvars[host][&#39;ansible_default_ipv4&#39;][&#39;address&#39;] }} {{ hostvars[host][&#39;ansible_fqdn&#39;] }} jcs-server{{ loop.index }} {{ hostvars[host][&#39;inventory_hostname&#39;] }}
-    {% endif %}
-{% endfor %}
+<h3 id="get-a-shell-in-a-k8s-container">Get a shell in a K8S container<a class="headerlink" href="#get-a-shell-in-a-k8s-container" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Get a shell in namespace:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ kubectl run --restart<span class="o">=</span>Never --rm -it --image<span class="o">=</span>alpine alpine-runner
 </code></pre></div>
 
-<p><em><code>lstrip_block=False</code></em></p>
-<p>Rendering is similar to :</p>
-<div class="highlight"><pre><span></span><code>    172.16.25.1 spine1
-               172.16.25.3 spine2
-               172.16.25.4 spine3
+<ul>
+<li>Set alias to start shell in k8s</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">kalpine</span><span class="o">=</span><span class="s1">&#39;kubectl run --restart=Never --rm -it --image=alpine alpine-runner&#39;</span>
 </code></pre></div>
 
-<p><em><code>lstrip_block=true</code></em></p>
-<p>Rendering should be:</p>
-<div class="highlight"><pre><span></span><code>172.16.25.1 spine1
-172.16.25.3 spine2
-172.16.25.4 spine3
+<h3 id="namespace-switcher">Namespace Switcher<a class="headerlink" href="#namespace-switcher" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Install <a href="https://github.com/blendle/kns">kns</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ brew tap blendle/blendle
+$ brew install kns
 </code></pre></div>
 
-<h3 id="loop-management">Loop management<a class="headerlink" href="#loop-management" title="Permanent link">&para;</a></h3>
-<p>Jinja2 has built-in option to manage loop information:</p>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>loop.index</td>
-<td>The current iteration of the loop. (1 indexed)</td>
-</tr>
-<tr>
-<td>loop.index0</td>
-<td>The current iteration of the loop. (0 indexed)</td>
-</tr>
-<tr>
-<td>loop.revindex</td>
-<td>The number of iterations from the end of the loop (1 indexed)</td>
-</tr>
-<tr>
-<td>loop.revindex0</td>
-<td>The number of iterations from the end of the loop (0 indexed)</td>
-</tr>
-<tr>
-<td>loop.first</td>
-<td>True if first iteration.</td>
-</tr>
-<tr>
-<td>loop.last</td>
-<td>True if last iteration.</td>
-</tr>
-<tr>
-<td>loop.length</td>
-<td>The number of items in the sequence.</td>
-</tr>
-<tr>
-<td>loop.cycle</td>
-<td>A helper function to cycle between a list of sequences. See the explanation below.</td>
-</tr>
-<tr>
-<td>loop.depth</td>
-<td>Indicates how deep in deep in a recursive loop the rendering currently is. Starts at level 1</td>
-</tr>
-<tr>
-<td>loop.depth0</td>
-<td>Indicates how deep in deep in a recursive loop the rendering currently is. Starts at level 0</td>
-</tr>
-</tbody>
-</table>
+<h3 id="test-http-load-balancing">Test HTTP Load Balancing<a class="headerlink" href="#test-http-load-balancing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">SERVER</span><span class="o">=</span><span class="m">1</span>.1.1.1
+$ <span class="nb">export</span> <span class="nv">PORT</span><span class="o">=</span><span class="m">32081</span>
+
+$ <span class="k">while</span> sleep <span class="m">0</span>.3<span class="p">;</span> <span class="k">do</span> curl -s <span class="si">${</span><span class="nv">SERVER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span> <span class="p">|</span> grep name<span class="p">;</span> <span class="k">done</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-lkz6f&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-lkz6f&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-mv26c&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-mv26c&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-lkz6f&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-mv26c&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-lkz6f&quot;</span>
+Server name: <span class="s2">&quot;httpenv-cfb65dd68-mv26c</span>
+</code></pre></div>
+
+<h3 id="kill-pod">Kill POD<a class="headerlink" href="#kill-pod" title="Permanent link">&para;</a></h3>
+<p>Do not wait grace period for signal propagation.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Delete a pod with minimal delay</span>
+$ kubectl delete pod foo --now
+
+<span class="c1"># Force delete a pod on a dead node</span>
+$ kubectl delete pod foo --force
+
+$ kubectl delete pod foo --grace-period<span class="o">=</span>-1
+<span class="c1"># Period of time in seconds given to the resource to</span>
+<span class="c1"># terminate gracefully. Ignored if negative.</span>
+<span class="c1"># Set to 1 for immediate shutdown. Can only be set</span>
+<span class="c1"># to 0 when --force is true (force deletion).</span>
+</code></pre></div>
+
+<h3 id="deployment-replicaset-pod-relations">Deployment / Replicaset / POD relations<a class="headerlink" href="#deployment-replicaset-pod-relations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Deployment always create a replicaSet</li>
+<li>A replicaSet always create at least one POD</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ kubectl get deploy
+NAME       READY   UP-TO-DATE   AVAILABLE   AGE
+pingpong   <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m25s
+
+$ kubectl get rs
+NAME                  DESIRED   CURRENT   READY   AGE
+pingpong-6777998c97   <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m29s
+
+$ kubectl get pods
+NAME                        READY   STATUS    RESTARTS   AGE
+pingpong-6777998c97-l8dmk   <span class="m">1</span>/1     Running   <span class="m">0</span>          4m34s
+</code></pre></div>
+
+<h3 id="scale-deployment">Scale deployment<a class="headerlink" href="#scale-deployment" title="Permanent link">&para;</a></h3>
+<h4 id="instantiate-scale-up-process">Instantiate scale up process<a class="headerlink" href="#instantiate-scale-up-process" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ kubectl scale deployment nginx-basics --replicas<span class="o">=</span><span class="m">3</span>
+deployment.apps/nginx-basics scaled
+</code></pre></div>
+
+<h4 id="check-k8s-status">Check K8S status<a class="headerlink" href="#check-k8s-status" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ kubectl get deployments.apps nginx-basics
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-basics   <span class="m">3</span>/3     <span class="m">3</span>            <span class="m">3</span>           19h
+
+$ kubectl get pods --selector<span class="o">=</span><span class="nv">app</span><span class="o">=</span>webui
+NAME                           READY   STATUS    RESTARTS   AGE
+nginx-basics-c48d789fd-kzcbt   <span class="m">1</span>/1     Running   <span class="m">1</span>          19h
+nginx-basics-c48d789fd-vbrmv   <span class="m">1</span>/1     Running   <span class="m">0</span>          3m39s
+nginx-basics-c48d789fd-vx9t5   <span class="m">1</span>/1     Running   <span class="m">0</span>          3m39s
+
+$ kubectl describe deployments.apps nginx-basics
+Name:                   nginx-basics
+Namespace:              default
+CreationTimestamp:      Tue, <span class="m">23</span> Jun <span class="m">2020</span> <span class="m">15</span>:44:44 +0200
+Labels:                 &lt;none&gt;
+Annotations:            deployment.kubernetes.io/revision: <span class="m">1</span>
+                        kubectl.kubernetes.io/last-applied-configuration:
+                          ...
+Selector:               <span class="nv">app</span><span class="o">=</span>webui
+Replicas:               <span class="m">3</span> desired <span class="p">|</span> <span class="m">3</span> updated <span class="p">|</span> <span class="m">3</span> total <span class="p">|</span> <span class="m">3</span> available <span class="p">|</span> <span class="m">0</span> unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        <span class="m">0</span>
+RollingUpdateStrategy:  <span class="m">25</span>% max unavailable, <span class="m">25</span>% max surge
+Pod Template:
+  Labels:  <span class="nv">app</span><span class="o">=</span>webui
+  Containers:
+   nginx:
+    Image:        titom73/nginx
+    Port:         <span class="m">80</span>/TCP
+    Host Port:    <span class="m">0</span>/TCP
+    Environment:  &lt;none&gt;
+    Mounts:       &lt;none&gt;
+  Volumes:        &lt;none&gt;
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  &lt;none&gt;
+NewReplicaSet:   nginx-basics-c48d789fd <span class="o">(</span><span class="m">3</span>/3 replicas created<span class="o">)</span>
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  4m5s  deployment-controller  Scaled up replica <span class="nb">set</span> nginx-basics-c48d789fd to <span class="m">3</span>
+</code></pre></div>
+
+<h4 id="check-with-server-requests">Check with Server requests<a class="headerlink" href="#check-with-server-requests" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ <span class="k">while</span> sleep <span class="m">0</span>.3<span class="p">;</span> <span class="k">do</span> curl -s test.lab.as73.inetsix.net/basics <span class="p">|</span> grep name<span class="p">;</span> <span class="k">done</span>
+Server name: nginx-basics-c48d789fd-kzcbt
+Server name: nginx-basics-c48d789fd-vbrmv
+Server name: nginx-basics-c48d789fd-vx9t5
+Server name: nginx-basics-c48d789fd-kzcbt
+Server name: nginx-basics-c48d789fd-vbrmv
+</code></pre></div>
+
+<h2 id="tricks">Tricks<a class="headerlink" href="#tricks" title="Permanent link">&para;</a></h2>
+<h3 id="dns-configuration">DNS configuration<a class="headerlink" href="#dns-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ microk8s <span class="nb">enable</span> dns
+
+$ microk8s kubectl -n kube-system edit configmap/coredns
+<span class="c1"># Please edit the object below. Lines beginning with a &#39;#&#39; will be ignored,</span>
+<span class="c1"># and an empty file will abort the edit. If an error occurs while saving this file will be</span>
+<span class="c1"># reopened with the relevant failures.</span>
+<span class="c1">#</span>
+apiVersion: v1
+data:
+  Corefile: <span class="p">|</span>
+    .:53 <span class="o">{</span>
+        errors
+        health <span class="o">{</span>
+          lameduck 5s
+        <span class="o">}</span>
+        ready
+        log . <span class="o">{</span>
+          class error
+        <span class="o">}</span>
+        kubernetes cluster.local in-addr.arpa ip6.arpa <span class="o">{</span>
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+        <span class="o">}</span>
+        prometheus :9153
+        forward . <span class="m">8</span>.8.8.8 <span class="m">8</span>.8.4.4
+        cache <span class="m">30</span>
+        loop
+        reload
+        loadbalance
+    <span class="o">}</span>
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: <span class="p">|</span>
+<span class="o">[</span>... output truncated ...<span class="o">]</span>
+</code></pre></div>
+
+<h3 id="issue-with-dns-resolution-on-alpine">Issue with DNS resolution on Alpine<a class="headerlink" href="#issue-with-dns-resolution-on-alpine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>k8s-journey/manifests on  master [?] at ☸️  microk8s
+➜ kubectl describe pod pingpong-8558fd45c7-pqc7p
+Name:         pingpong-8558fd45c7-pqc7p
+Namespace:    default
+Priority:     0
+Node:         k8s-node01/10.73.1.248
+Start Time:   Mon, 22 Jun 2020 22:50:15 +0200
+Labels:       app=pingpong
+              pod-template-hash=8558fd45c7
+[... output truncated ...]
+Events:
+  Type     Reason            Age                    From                 Message
+  ----     ------            ----                   ----                 -------
+  Normal   Scheduled         4m38s                  default-scheduler    Successfully assigned default/pingpong-8558fd45c7-pqc7p to k8s-node01
+  Normal   Pulling           4m22s (x3 over 4m37s)  kubelet, k8s-node01  Pulling image &quot;alpine&quot;
+  Normal   Pulled            4m22s (x3 over 4m36s)  kubelet, k8s-node01  Successfully pulled image &quot;alpine&quot;
+  Normal   Created           4m21s (x3 over 4m36s)  kubelet, k8s-node01  Created container alpine
+  Normal   Started           4m21s (x3 over 4m36s)  kubelet, k8s-node01  Started container alpine
+  Warning  BackOff           4m9s (x4 over 4m34s)   kubelet, k8s-node01  Back-off restarting failed container
+  Warning  DNSConfigForming  3m55s (x9 over 4m38s)  kubelet, k8s-node01  Search Line limits were exceeded, some search paths have been omitted, the applied search line is: default.svc.cluster.local svc.cluster.local cluster.local lab.as73.inetsix.net as73047inetsix.net inetsix.net
+</code></pre></div>
+
+<p>Reason is search name in DNS cannot exceed <a href="https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/core/validation/validation.go#L2832">6 dns domains</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="p">(</span>
+    <span class="c1">// Limits on various DNS parameters. These are derived from</span>
+    <span class="c1">// restrictions in Linux libc name resolution handling.</span>
+    <span class="c1">// Max number of DNS name servers.</span>
+    <span class="nx">MaxDNSNameservers</span> <span class="p">=</span> <span class="mi">3</span>
+    <span class="c1">// Max number of domains in search path.</span>
+    <span class="nx">MaxDNSSearchPaths</span> <span class="p">=</span> <span class="mi">6</span>
+    <span class="c1">// Max number of characters in search path.</span>
+    <span class="nx">MaxDNSSearchListChars</span> <span class="p">=</span> <span class="mi">256</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Discussion on <a href="https://stackoverflow.com/questions/59890834/k8s-coredns-and-flannel-nameserver-limit-exceeded">Stackoverflow</a></p>
                 
               
               
@@ -862,7 +893,7 @@ status: {{ns.dev_state|default(&quot;enable&quot;)}}
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../tips/" title="Tips & Tricks" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../gh-repos/" title="Github Repositories" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -871,19 +902,19 @@ status: {{ns.dev_state|default(&quot;enable&quot;)}}
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Tips & Tricks
+                Github Repositories
               </div>
             </div>
           </a>
         
         
-          <a href="../Arista%20AVD/ansible-avd-config/" title="Arista AVD Configuration overview" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../yaml-jinja/" title="YAML Structures in Jinja2" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Arista AVD Configuration overview
+                YAML Structures in Jinja2
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
