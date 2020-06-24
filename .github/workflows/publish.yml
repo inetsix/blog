@@ -1,8 +1,6 @@
 name: Update website
 on:
   push:
-    branches:
-      - 'content'
   schedule:
     - cron:  '0 0 * * *'
 jobs:
@@ -18,6 +16,7 @@ jobs:
       - name: 'Build mkdocs content to site folder'
         run: |
             python .github/collector.py
+            (cd docs/ && wget --quiet https://raw.githubusercontent.com/titom73/k8s-journey/master/docs/tips.md)
       - name: 'Build mkdocs content to site folder'
         run: |
             pip install -r requirements.txt
