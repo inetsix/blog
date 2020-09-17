@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://www.inetsix.net/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/gh-repos/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/yaml-jinja/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/Arista%20AVD/ansible-avd-config/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/Arista%20AVD/ansible-avd-eve/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/how-to/ci-to-start-docker-and-validate-code/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/how-to/docker-ansible/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/how-to/k8s-tips-tricks/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://www.inetsix.net/how-to/virtual-env-python/</loc>
-     <lastmod>2020-09-16</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
