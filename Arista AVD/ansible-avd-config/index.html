@@ -723,11 +723,9 @@
 │       └── medias
 └── playbooks
 </code></pre></div>
-
 <p>From there, you can run ansible playbooks with following syntax (as an example) :</p>
 <div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/my-playbook -i inventories/inetsix-eapi
 </code></pre></div>
-
 <p>To support this post, we will use the following topology running on EVE-NG server:</p>
 <p><img alt="Lab Topology" src="docs/../medias/ansible-avd-lab-topology.png" /></p>
 <h2 id="inventory-file">Inventory file.<a class="headerlink" href="#inventory-file" title="Permanent link">&para;</a></h2>
@@ -782,7 +780,6 @@
         <span class="nt">AVD2_L3LEAFS</span><span class="p">:</span>
         <span class="nt">AVD2_L2LEAFS</span><span class="p">:</span>
 </code></pre></div>
-
 <p>In this file, you can also define management address of all devices. Because in this lab we use Jumphost, we will configure this address in the next section, but at least we configured on which port we will connect to eAPI using <code>ansible_port</code> variable.</p>
 <h2 id="avd-variables">AVD Variables<a class="headerlink" href="#avd-variables" title="Permanent link">&para;</a></h2>
 <p>Based on inventory we did in the previous section, it is time to create <code>group_vars</code>.</p>
@@ -819,7 +816,6 @@
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">uk.pool.ntp.org</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fr.pool.ntp.org</span>
 </code></pre></div>
-
 <h3 id="configure-fabric-topology">Configure Fabric topology<a class="headerlink" href="#configure-fabric-topology" title="Permanent link">&para;</a></h3>
 <p>Fabric topology is configured in <a href="https://github.com/inetsix/demo-avd-evpn-eve-ng/blob/master/inventories/inetsix-eapi/group_vars/AVD2_FABRIC.yml"><code>inventories/inetsix-eapi/group_vars/AVD2_FABRIC.yml</code></a> which is file that covers <code>AVD2_FABRIC</code> group we defined in <a href="#inventory-file">inventory</a>. This file contains all the base information to create initial configuration:</p>
 <p>You can also refer to <a href="https://github.com/aristanetworks/ansible-avd/blob/devel/ansible_collections/arista/avd/roles/eos_l3ls_evpn/README.md#fabric-topology-variables"><strong>Arista Validated Design</strong> documentation</a> to get a description of every single option available.</p>
@@ -840,7 +836,6 @@
 <span class="c1"># Assign range larger then total leaf switches</span>
 <span class="nt">vtep_loopback_network_summary</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.254.0/24</span>
 </code></pre></div>
-
 <ul>
 <li>MLAG IP information</li>
 </ul>
@@ -850,7 +845,6 @@
   <span class="nt">leaf_peer_l3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.255.251.0/24</span>
   <span class="nt">mlag_peer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.255.252.0/24</span>
 </code></pre></div>
-
 <p>Then, you have to describe devices for each role. Don&rsquo;t forget to set management IP here.</p>
 <ul>
 <li>Spine devices</li>
@@ -869,7 +863,6 @@
       <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
       <span class="nt">mgmt_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.73.254.2/24</span>
 </code></pre></div>
-
 <ul>
 <li>VTEP or L3LEAF devices</li>
 </ul>
@@ -898,7 +891,6 @@
           <span class="nt">spine_interfaces</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">Ethernet2</span><span class="p p-Indicator">,</span> <span class="nv">Ethernet2</span><span class="p p-Indicator">]</span>
 <span class="p p-Indicator">[</span><span class="nv">... output truncated ...</span><span class="p p-Indicator">]</span>
 </code></pre></div>
-
 <ul>
 <li>Aggregation switches: Configuration process is similar to L3LEAFS.</li>
 </ul>
@@ -911,7 +903,6 @@
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
 <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">spine</span>     <span class="c1"># Must be either spine|l3leaf|l2leaf</span>
 </code></pre></div>
-
 <h3 id="configure-vnivlan-across-the-fabric">Configure VNI/VLAN across the Fabric.<a class="headerlink" href="#configure-vnivlan-across-the-fabric" title="Permanent link">&para;</a></h3>
 <p>AVD supports mechanism to create VLANs and VNIs and enable traffic forwarding in your overlay. In current version (<code>v1.0.2</code>), only following design listed below are supported:</p>
 <ul>
@@ -958,7 +949,6 @@ AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Li
                                 192.168.254.5         -       100     0       65001 65102 i
 [... output truncated ...]
 </code></pre></div>
-
 <h4 id="symetric-irb-model">Symetric IRB model<a class="headerlink" href="#symetric-irb-model" title="Permanent link">&para;</a></h4>
 <p>Configure IRB symetric model, use following structure:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">tenants</span><span class="p">:</span>
@@ -991,7 +981,6 @@ AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Li
             <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
             <span class="nt">ip_address_virtual</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.1.12.254/24</span>
 </code></pre></div>
-
 <p>Example will create 2 VRFs :</p>
 <ul>
 <li><code>TENANT_A_PROJECT01</code></li>
@@ -1005,7 +994,6 @@ AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Li
 <p>In case you deployed this VRF on a MLAG VTEP, an additional vlan is created to allow L3 synchronization within VRF. This vlan is automatically generated with this algorithm:</p>
 <div class="highlight"><pre><span></span><code>{{ mlag_ibgp_peering_vrfs.base_vlan + (tenants[tenant].vrfs[vrf].vrf_vni - 1) }}
 </code></pre></div>
-
 <p>In addition to that, each EOS devices will allocate a dynamic VLAN per VRF to support <strong>L3 VNI</strong></p>
 <div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show vlan
 VLAN  Name                             Status    Ports
@@ -1036,7 +1024,6 @@ VNI         VLAN        Source       Interface           802.1Q Tag
 20201       201         static       Port-Channel5       201
                                      Vxlan1              201
 </code></pre></div>
-
 <p>In <code>TENANT_A_PROJECT02</code>, we can also see an optional feature named <strong><code>vtep_diagnostic</code></strong>. This option allows you to create a loopback in this VRF and do some connectivity test.</p>
 <h3 id="configure-downlinks">Configure downlinks<a class="headerlink" href="#configure-downlinks" title="Permanent link">&para;</a></h3>
 <p>As we have configured L3LS fabric, EVPN/VXLAN overlay, services, it is now time to configure ports to connect servers. Ports should be configured in <a href="https://github.com/inetsix/demo-avd-evpn-eve-ng/blob/3a461e0ce25afb25d4e51f620bafd324018c1189/inventories/inetsix-eapi/group_vars/AVD2_SERVERS.yml"><code>AVD2_SERVERS.yml</code></a>.</p>
@@ -1050,7 +1037,6 @@ VNI         VLAN        Source       Interface           802.1Q Tag
     <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">access</span>
     <span class="nt">vlans</span><span class="p">:</span> <span class="s">&quot;110&quot;</span>
 </code></pre></div>
-
 <blockquote>
 <p>This section uses vlan-id so all of these entries must be configured in <a href="#configure-vnivlan-across-the-fabric"><strong>TENANTS</strong></a> file</p>
 </blockquote>
@@ -1067,7 +1053,6 @@ VNI         VLAN        Source       Interface           802.1Q Tag
         <span class="nt">switches</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">DC1-AGG01</span><span class="p p-Indicator">]</span>       <span class="c1"># Switch to connect server</span>
         <span class="nt">profile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A-PR01-DMZ</span>         <span class="c1"># Port profile to apply</span>
 </code></pre></div>
-
 <p>Whereas most of the information are purely optional as not used by AVD, the last 3 entries are required:</p>
 <ul>
 <li><code>switch_ports</code>: Will be used to configure correct port on the switch.</li>
@@ -1089,7 +1074,6 @@ VNI         VLAN        Source       Interface           802.1Q Tag
           <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PortChannel5</span>
           <span class="nt">mode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">active</span>
 </code></pre></div>
-
 <h2 id="configure-tasks-for-avd">Configure tasks for AVD<a class="headerlink" href="#configure-tasks-for-avd" title="Permanent link">&para;</a></h2>
 <p>We will now configure AVD tasks you may use in your playbook:</p>
 <h3 id="create-directory-structure">Create directory structure<a class="headerlink" href="#create-directory-structure" title="Permanent link">&para;</a></h3>
@@ -1102,7 +1086,6 @@ VNI         VLAN        Source       Interface           802.1Q Tag
       <span class="nt">vars</span><span class="p">:</span>
         <span class="nt">fabric_dir_name</span><span class="p">:</span> <span class="s">&#39;{{fabric_name}}&#39;</span>
 </code></pre></div>
-
 <h3 id="transform-evpn-datamodel-to-device-data-model">Transform EVPN datamodel to device data model<a class="headerlink" href="#transform-evpn-datamodel-to-device-data-model" title="Permanent link">&para;</a></h3>
 <p>AVD provides role <a href="https://github.com/aristanetworks/ansible-avd/blob/devel/ansible_collections/arista/avd/roles/eos_l3ls_evpn/README.md"><strong><code>eos_l3ls_evpn</code></strong></a> role to generate intend YAML device configuration:</p>
 <div class="highlight"><pre><span></span><code>  <span class="nt">tasks</span><span class="p">:</span>
@@ -1111,7 +1094,6 @@ VNI         VLAN        Source       Interface           802.1Q Tag
       <span class="nt">import_role</span><span class="p">:</span>
         <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd.eos_l3ls_evpn</span>
 </code></pre></div>
-
 <h3 id="generate-device-configuration-and-documentation">Generate device configuration and documentation<a class="headerlink" href="#generate-device-configuration-and-documentation" title="Permanent link">&para;</a></h3>
 <p>After device data have been generated, AVD can build EOS configuration as well as documentation in markdown format.</p>
 <div class="highlight"><pre><span></span><code>  <span class="nt">tasks</span><span class="p">:</span>

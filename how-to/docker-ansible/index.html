@@ -521,7 +521,6 @@ base_ansible<span class="o">()</span> <span class="o">{</span>
             inetsix/docker-ansible:<span class="si">${</span><span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="si">}</span> <span class="nv">$@</span>
 <span class="o">}</span>
 </code></pre></div>
-
 <p>Once this bash function is available, you can build you aliases to mimic ansible:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">alias</span> ansible-update<span class="o">=</span><span class="s1">&#39;docker pull inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION}&#39;</span>
 <span class="nb">alias</span> ansible-shell<span class="o">=</span><span class="s1">&#39;base_ansible bash&#39;</span>
@@ -530,7 +529,6 @@ base_ansible<span class="o">()</span> <span class="o">{</span>
 <span class="nb">alias</span> ansible-vault<span class="o">=</span><span class="s1">&#39;base_ansible ansible-vault&#39;</span>
 <span class="nb">alias</span> ansible-galaxy<span class="o">=</span><span class="s1">&#39;base_ansible ansible-galaxy&#39;</span>
 </code></pre></div>
-
 <p>The <code>export</code> statement gives option to specify which version of ansible we want to use. This version is equal to <a href="https://cloud.docker.com/u/inetsix/repository/docker/inetsix/docker-ansible/tags">tags</a> defined during the build</p>
 <p>This docker image is built with the following tags (12/2018) for both <code>alpine</code> and Debian <code>jessie</code> OS:</p>
 <ul>
@@ -553,7 +551,6 @@ ansible <span class="m">2</span>.5.2
   executable <span class="nv">location</span> <span class="o">=</span> /usr/local/bin/ansible
   python <span class="nv">version</span> <span class="o">=</span> <span class="m">2</span>.7.14 <span class="o">(</span>default, Apr <span class="m">27</span> <span class="m">2018</span>, <span class="m">09</span>:37:08<span class="o">)</span> <span class="o">[</span>GCC <span class="m">4</span>.9.2<span class="o">]</span>
 </code></pre></div>
-
 <h2 id="optional-parameters">Optional parameters<a class="headerlink" href="#optional-parameters" title="Permanent link">&para;</a></h2>
 <h3 id="export-aws-cli-parameters">Export AWS CLI parameters<a class="headerlink" href="#export-aws-cli-parameters" title="Permanent link">&para;</a></h3>
 <p>Assuming you have configured your AWS CLI, you may export your parameters with the following variables:</p>
@@ -561,7 +558,6 @@ ansible <span class="m">2</span>.5.2
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">AWS_DEFAULT_REGION</span><span class="o">=</span><span class="s1">&#39;eu-west-2&#39;</span>
 <span class="nb">export</span> <span class="nv">AWS_PROFILE</span><span class="o">=</span><span class="s1">&#39;your_aws_profile&#39;</span>
 </code></pre></div>
-
 <p>Then, these variables are exposed to your docker instance by using <code>--env</code> keyword. If they are not set, then, nothing is export to your container.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="o">=</span><span class="m">2</span>.5
 base_ansible<span class="o">()</span> <span class="o">{</span>
@@ -578,7 +574,6 @@ base_ansible<span class="o">()</span> <span class="o">{</span>
             inetsix/docker-ansible:<span class="si">${</span><span class="nv">DOCKER_ANSIBLE_VERSION</span><span class="si">}</span> <span class="nv">$@</span>
 <span class="o">}</span>
 </code></pre></div>
-
 <h3 id="overwrite-ansible-commands">Overwrite ansible commands<a class="headerlink" href="#overwrite-ansible-commands" title="Permanent link">&para;</a></h3>
 <p>If for some reasons, you need to use your installed ansible version, just use <code>\\</code> in front of any ansible command like below:</p>
 <div class="highlight"><pre><span></span><code>$ <span class="se">\a</span>nsible --version

@@ -476,7 +476,6 @@
 <p>Use <code>python-pip</code> to install module:</p>
 <div class="highlight"><pre><span></span><code>$ pip install virtualenvwrapper
 </code></pre></div>
-
 <p>To test in your shell:</p>
 <ul>
 <li>Create folder to store virtual-environments:</li>
@@ -484,7 +483,6 @@
 <div class="highlight"><pre><span></span><code>$ mkdir ~/.virtual-envs
 $ mkdir ~/Scripting/
 </code></pre></div>
-
 <ul>
 <li>Load vars to your shell</li>
 </ul>
@@ -492,7 +490,6 @@ $ mkdir ~/Scripting/
 $ <span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span>~/Scripting/
 $ <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </code></pre></div>
-
 <p>To make a permanent configuration:</p>
 <div class="highlight"><pre><span></span><code>$ vim ~/.zshrc
 
@@ -500,32 +497,27 @@ $ <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 <span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span>~/Scripting/
 <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </code></pre></div>
-
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Create virtual environment</li>
 </ol>
 <div class="highlight"><pre><span></span><code>$ mkvirtualenv my_venv
 </code></pre></div>
-
 <ol start="2">
 <li>List existing environments</li>
 </ol>
 <div class="highlight"><pre><span></span><code>$ lsvirtualenv 
 </code></pre></div>
-
 <ol start="3">
 <li>Load existing environment</li>
 </ol>
 <div class="highlight"><pre><span></span><code>$ workon my_env
 </code></pre></div>
-
 <ol start="4">
 <li>Create project with a new venv</li>
 </ol>
 <div class="highlight"><pre><span></span><code>$ mkproject myproject
 </code></pre></div>
-
 <blockquote>
 <p>Project is created under <code>PROJECT_HOME</code> with a dedicated folder and a venv with project&rsquo;s name</p>
 </blockquote>
@@ -534,13 +526,11 @@ $ <span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
 </ol>
 <div class="highlight"><pre><span></span><code>deactivate
 </code></pre></div>
-
 <ol start="6">
 <li>Delete a venv</li>
 </ol>
 <div class="highlight"><pre><span></span><code>$ rmvirtualenv my_venv
 </code></pre></div>
-
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html">List of commands</a></li>

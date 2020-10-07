@@ -640,14 +640,12 @@
 <span class="nt">hostname</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myDevice</span>
 <span class="nt">comment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">“This device is a fake one”</span>
 </code></pre></div>
-
 <p><code>JINJA2</code> to consume <code>YAML</code> data structure </p>
 <div class="highlight"><pre><span></span><code>system {
 {% if time_zone is defined %}
 time-zone {{ time_zone }};
 {% endif %}
 </code></pre></div>
-
 <h3 id="structured-key-allocation">Structured key allocation<a class="headerlink" href="#structured-key-allocation" title="Permanent link">&para;</a></h3>
 <p>YAML will consider lines prefixed with more spaces than parent key are contained inside it</p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
@@ -656,7 +654,6 @@ time-zone {{ time_zone }};
     <span class="nt">myCommunity</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">target:99:1</span>
     <span class="nt">tenant2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">target:99:2</span>
 </code></pre></div>
-
 <p>Data structure similar to this YAML representation is :</p>
 <div class="highlight"><pre><span></span><code><span class="n">routing_policy</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;communities&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -665,7 +662,6 @@ time-zone {{ time_zone }};
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h2 id="list-management">List Management<a class="headerlink" href="#list-management" title="Permanent link">&para;</a></h2>
 <h3 id="yaml-list">YAML List<a class="headerlink" href="#yaml-list" title="Permanent link">&para;</a></h3>
 <p>Assuming following data structure in <code>YAML</code></p>
@@ -674,17 +670,14 @@ time-zone {{ time_zone }};
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span>
 </code></pre></div>
-
 <p>Access data from JINJA2 can be done with the following code:</p>
 <div class="highlight"><pre><span></span><code>{% for ntp_server in ntp_servers %}
   server {{ ntp_server }};
 {% endfor %}
 </code></pre></div>
-
 <p>Data structure similar to this YAML representation is :</p>
 <div class="highlight"><pre><span></span><code><span class="n">ntp_servers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;8.8.8.8&#39;</span><span class="p">,</span> <span class="s1">&#39;4.4.4.4&#39;</span><span class="p">]</span>
 </code></pre></div>
-
 <h3 id="yaml-dictionary">YAML Dictionary<a class="headerlink" href="#yaml-dictionary" title="Permanent link">&para;</a></h3>
 <p>Assuming following data structure in <code>YAML</code></p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
@@ -693,18 +686,15 @@ time-zone {{ time_zone }};
   <span class="nt">20</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name2</span>
   <span class="nt">30</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name3</span>
 </code></pre></div>
-
 <p>Access data from JINJA2 can be done with the following code:</p>
 <div class="highlight"><pre><span></span><code>{% for vlan_id, name in vlans.items() %}
      vlan {{ vlan_id }}
      name {{ name }}
 {% endfor %}
 </code></pre></div>
-
 <p>Data structure similar to this YAML representation is :</p>
 <div class="highlight"><pre><span></span><code><span class="n">vlans</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">:</span> <span class="s2">&quot;name1&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span> <span class="s2">&quot;name2&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">:</span> <span class="s2">&quot;name3&quot;</span><span class="p">}</span>
 </code></pre></div>
-
 <h3 id="yaml-maps">YAML Maps<a class="headerlink" href="#yaml-maps" title="Permanent link">&para;</a></h3>
 <p>Assuming following data structure in <code>YAML</code></p>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
@@ -714,7 +704,6 @@ time-zone {{ time_zone }};
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;ge-0/0/1&quot;</span>
     <span class="nt">descr</span><span class="p">:</span> <span class="s">&quot;comment&quot;</span>
 </code></pre></div>
-
 <p>Access data from JINJA2 can be done with the following code:</p>
 <div class="highlight"><pre><span></span><code>{% for interface in interfaces %}
     {{interface.name}} {
@@ -722,12 +711,10 @@ time-zone {{ time_zone }};
           vlan-tagging;
 {% endfor %}
 </code></pre></div>
-
 <p>Data structure similar to this YAML representation is :</p>
 <div class="highlight"><pre><span></span><code><span class="n">interfaces</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ge-0/0/0&quot;</span><span class="p">,</span> <span class="s2">&quot;descr&quot;</span><span class="p">:</span> <span class="s2">&quot;Blah&quot;</span><span class="p">},</span>
              <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ge-0/0/1&quot;</span><span class="p">,</span> <span class="s2">&quot;descr&quot;</span><span class="p">:</span> <span class="s2">&quot;comment&quot;</span><span class="p">}]</span>
 </code></pre></div>
-
 <h2 id="advanced-jinja2-syntax">Advanced Jinja2 syntax<a class="headerlink" href="#advanced-jinja2-syntax" title="Permanent link">&para;</a></h2>
 <h3 id="update-variable-in-a-loop">Update variable in a Loop<a class="headerlink" href="#update-variable-in-a-loop" title="Permanent link">&para;</a></h3>
 <p>Syntax below allows user to update value of a variable within a loop and access to it after in a different jinja2 block:</p>
@@ -741,7 +728,6 @@ time-zone {{ time_zone }};
 
 status: {{ns.dev_state|default(&quot;enable&quot;)}}
 </code></pre></div>
-
 <h3 id="use-ipaddr-within-jinja2-template">Use IPaddr within Jinja2 template<a class="headerlink" href="#use-ipaddr-within-jinja2-template" title="Permanent link">&para;</a></h3>
 <p>Assuming following <code>yaml</code> definition:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
@@ -749,11 +735,9 @@ status: {{ns.dev_state|default(&quot;enable&quot;)}}
   <span class="nt">networks</span><span class="p">:</span>
     <span class="nt">loopbacks</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.0/16</span>
 </code></pre></div>
-
 <p>Jinja gives option to build IP address within <code>loopback</code> network with following syntax where <code>id</code> is the idth in the network:</p>
 <div class="highlight"><pre><span></span><code>loopback_ip: {{ underlay.networks.loopbacks | ipaddr(id) | ipaddr(&#39;address&#39;) }}
 </code></pre></div>
-
 <p>Another example:</p>
 <p><code>{{ tenant.interconnect_prefix | ipaddr(6)}}</code> combined with <code>interconnect_prefix: 172.25.10.16/28</code> resulst in <code>172.25.10.22</code></p>
 <h3 id="manage-jinja2-rendering-indentation">Manage Jinja2 rendering indentation<a class="headerlink" href="#manage-jinja2-rendering-indentation" title="Permanent link">&para;</a></h3>
@@ -766,7 +750,6 @@ status: {{ns.dev_state|default(&quot;enable&quot;)}}
 <div class="highlight"><pre><span></span><code>#jinja2: lstrip_blocks: &quot;True (or False)&quot;, trim_blocks: &quot;True (or False)&quot;
 ...
 </code></pre></div>
-
 <p><strong>Example</strong></p>
 <p>Using this template:</p>
 <div class="highlight"><pre><span></span><code>{% for host in groups[&#39;webservers&#39;] %}
@@ -777,21 +760,18 @@ status: {{ns.dev_state|default(&quot;enable&quot;)}}
     {% endif %}
 {% endfor %}
 </code></pre></div>
-
 <p><em><code>lstrip_block=False</code></em></p>
 <p>Rendering is similar to :</p>
 <div class="highlight"><pre><span></span><code>    172.16.25.1 spine1
                172.16.25.3 spine2
                172.16.25.4 spine3
 </code></pre></div>
-
 <p><em><code>lstrip_block=true</code></em></p>
 <p>Rendering should be:</p>
 <div class="highlight"><pre><span></span><code>172.16.25.1 spine1
 172.16.25.3 spine2
 172.16.25.4 spine3
 </code></pre></div>
-
 <h3 id="loop-management">Loop management<a class="headerlink" href="#loop-management" title="Permanent link">&para;</a></h3>
 <p>Jinja2 has built-in option to manage loop information:</p>
 <table>

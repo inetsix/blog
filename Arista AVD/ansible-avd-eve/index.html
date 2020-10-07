@@ -775,7 +775,6 @@
 <span class="x">!</span>
 <span class="x">end</span>
 </code></pre></div>
-
 <h3 id="jumphost-configuration">Jumphost Configuration<a class="headerlink" href="#jumphost-configuration" title="Permanent link">&para;</a></h3>
 <p>Because our OOB network is completely isolated from our network, a jumphost will be configured to expose eAPI port for all EOS devices. <code>ens3</code> is configured in OOB network with ip address <code>10.73.254.253/24</code> and <a href="https://github.com/inetsix/demo-avd-evpn-eve-ng/blob/master/iptables-port-forward.sh">an <strong>IPtables</strong> configuration</a> is deployed to serve NAT.</p>
 <p>This script must be executed with root permissions. Script maps port <strong><code>443</code></strong> of EOS to a port on <strong><code>800x</code></strong> range.</p>
@@ -817,7 +816,6 @@ iptables -A FORWARD -p tcp -d <span class="m">10</span>.73.254.0/24 --dport <spa
 
 <span class="nb">echo</span> <span class="s1">&#39;* Process done&#39;</span>
 </code></pre></div>
-
 <p>You can validate everything is well configured with commands below:</p>
 <h4 id="check-nat-settings">Check NAT Settings<a class="headerlink" href="#check-nat-settings" title="Permanent link">&para;</a></h4>
 <p>It is important to validate NAT settings are all set as expected</p>
@@ -850,7 +848,6 @@ target     prot opt <span class="nb">source</span>               destination
 MASQUERADE  all  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0
 MASQUERADE  all  --  <span class="m">0</span>.0.0.0/0            <span class="m">0</span>.0.0.0/0
 </code></pre></div>
-
 <h4 id="check-access-to-eapi">Check access to eAPI<a class="headerlink" href="#check-access-to-eapi" title="Permanent link">&para;</a></h4>
 <p>Once NAT as been correctly set, check you can reach your devices using jumphost address from your laptop</p>
 <div class="highlight"><pre><span></span><code>$ curl -i -k https://10.73.1.17:8001
@@ -874,7 +871,6 @@ Content-Security-Policy: frame-ancestors <span class="s1">&#39;none&#39;</span>
 
 Page redirect
 </code></pre></div>
-
 <h2 id="create-arista-validated-design-project">Create Arista Validated Design project.<a class="headerlink" href="#create-arista-validated-design-project" title="Permanent link">&para;</a></h2>
 <p>Ok, enough of lab building and we can start to play with Ansible and AVD collection.</p>
 <h3 id="create-a-repository">Create a repository<a class="headerlink" href="#create-a-repository" title="Permanent link">&para;</a></h3>
@@ -896,15 +892,12 @@ Page redirect
 │       └── medias
 └── playbooks
 </code></pre></div>
-
 <p>From there, you can run ansible playbooks with following syntax (as an example) :</p>
 <div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/my-playbook -i inventories/inetsix-eapi
 </code></pre></div>
-
 <p>So to make it easy to start, you can clone this repository as baseline:</p>
 <div class="highlight"><pre><span></span><code>$ git clone https://github.com/inetsix/demo-avd-evpn-eve-ng.git
 </code></pre></div>
-
 <h2 id="configure-arista-valdiated-design">Configure Arista Valdiated Design<a class="headerlink" href="#configure-arista-valdiated-design" title="Permanent link">&para;</a></h2>
 <p>Arista validated design can be installed in 2 different ways:</p>
 <ul>
@@ -919,7 +912,6 @@ $ pip3 install -r requirements.txt
 <span class="c1"># install collection</span>
 $ ansible-galaxy collection install arista.avd
 </code></pre></div>
-
 <h3 id="configure-arista-validate-design-variables">Configure Arista Validate Design variables<a class="headerlink" href="#configure-arista-validate-design-variables" title="Permanent link">&para;</a></h3>
 <p>To generate content based on AVD collection, we have to configure 2 things:</p>
 <ul>
@@ -946,7 +938,6 @@ $ ansible-galaxy collection install arista.avd
 
 <span class="nt">ansible_host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;YOUR JUMPHOST IP&gt;</span>
 </code></pre></div>
-
 <h3 id="configure-arista-valdiated-design-variables">Configure Arista Valdiated Design variables<a class="headerlink" href="#configure-arista-valdiated-design-variables" title="Permanent link">&para;</a></h3>
 <p>You can check <a href="../ansible-avd-config/">this post where we detail how to use and configure AVD</a> to build EVPN/VXLAN configuration. And you can also read <a href="https://github.com/aristanetworks/ansible-avd/tree/devel/ansible_collections/arista/avd">complete documentation from the project repository</a>.</p>
 <h3 id="create-a-playbook-to-deploy">Create a playbook to deploy<a class="headerlink" href="#create-a-playbook-to-deploy" title="Permanent link">&para;</a></h3>
@@ -982,7 +973,6 @@ $ ansible-galaxy collection install arista.avd
       <span class="nt">import_role</span><span class="p">:</span>
          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arista.avd.eos_config_deploy_eapi</span>
 </code></pre></div>
-
 <p>As you can see, we put 2 different <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html">ansible tags</a> to be more granular:</p>
 <ul>
 <li><strong><code>build</code></strong>: give us an option to just generate configuration and review offline all the config files.</li>
@@ -990,7 +980,6 @@ $ ansible-galaxy collection install arista.avd
 </ul>
 <div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/avd-eapi-generic.yml -i inventories/inetsix-eapi/inventory.yml --tags build
 </code></pre></div>
-
 <p>Playbook will create all files and folder in your inventory and here is an output example:</p>
 <div class="highlight"><pre><span></span><code>tree -L <span class="m">3</span> -d
 .
@@ -1005,11 +994,9 @@ $ ansible-galaxy collection install arista.avd
 ├── output.variables
 └── playbooks
 </code></pre></div>
-
 <p>To push configuration to devices, just use the other tags:</p>
 <div class="highlight"><pre><span></span><code>$ ansible-playbook playbooks/avd-eapi-generic.yml -i inventories/inetsix-eapi/inventory.yml --tags <span class="s2">&quot;build, deploy&quot;</span>
 </code></pre></div>
-
 <h2 id="check-verification">Check &amp; Verification<a class="headerlink" href="#check-verification" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>If it is first time devices activate arBgp, it is required to reboot topology</strong></p>
@@ -1032,7 +1019,6 @@ transceiver qsfp default-mode 4x10G
 !
 <span class="o">[</span>... output truncated ...<span class="o">]</span>
 </code></pre></div>
-
 <p>You can also check LLDP neighbor:</p>
 <div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show lldp neighbors
 Last table change time   : 2 days, 20:37:13 ago
@@ -1059,7 +1045,6 @@ Ma1        AVD2-LEAF1B                      Management1                120
 Ma1        AVD2-SPINE2                      Management1                120
 Ma1        AVD2-SPINE1                      Management1                120
 </code></pre></div>
-
 <p>Meantime, MLAG should be all set:</p>
 <div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show mlag
 MLAG Configuration:
@@ -1093,7 +1078,6 @@ AVD2-LEAF1A#show mlag interfaces
      <span class="m">5</span>     AVD2_L2LEAF1_Po1     active-full       Po5        Po5          up/up
 AVD2-LEAF1A#
 </code></pre></div>
-
 <p>Based on our setup, you can also check that L3LEAF to AGG devices are well configured:</p>
 <div class="highlight"><pre><span></span><code>AVD2-LEAF1A#show inter description| grep AGG
 Et5                            up             up                 AVD2-AGG01_Ethernet1
@@ -1114,7 +1098,6 @@ Port Channel Port-Channel5*:
 * - Only local interfaces for MLAGs are displayed. Connect to the peer to
     see the state for peer interfaces.
 </code></pre></div>
-
 <p>And then check your BGP sessions:</p>
 <ul>
 <li>IPv4 Underlay sessions</li>
@@ -1128,7 +1111,6 @@ Neighbor Status Codes: m - Under maintenance
   172.31.255.0     4  65001           4907      4899    0    0    2d21h Estab   11     11
   172.31.255.2     4  65001           4897      4892    0    0    2d21h Estab   11     11
 </code></pre></div>
-
 <ul>
 <li>EVPN Overlay sessions</li>
 </ul>
@@ -1140,7 +1122,6 @@ Neighbor Status Codes: m - Under maintenance
   192.168.255.1    4  65001           4931      4914    0    0    2d21h Estab   22     22
   192.168.255.2    4  65001           4938      4939    0    0    2d21h Estab   22     22
 </code></pre></div>
-
 <p>Then you are all set to continue your journey with Arista Validated design</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>

@@ -670,20 +670,17 @@
 <div class="highlight"><pre><span></span><code>vim ~/.zshrc
 <span class="nv">plugins</span><span class="o">=(</span>... kubectl<span class="o">)</span>
 </code></pre></div>
-
 <h3 id="get-a-shell-in-a-k8s-container">Get a shell in a K8S container<a class="headerlink" href="#get-a-shell-in-a-k8s-container" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Get a shell in namespace:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>$ kubectl run --restart<span class="o">=</span>Never --rm -it --image<span class="o">=</span>alpine alpine-runner
 </code></pre></div>
-
 <ul>
 <li>Set alias to start shell in k8s</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">kalpine</span><span class="o">=</span><span class="s1">&#39;kubectl run --restart=Never --rm -it --image=alpine alpine-runner&#39;</span>
 </code></pre></div>
-
 <h3 id="namespace-switcher">Namespace Switcher<a class="headerlink" href="#namespace-switcher" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Install <a href="https://github.com/blendle/kns">kns</a></li>
@@ -691,7 +688,6 @@
 <div class="highlight"><pre><span></span><code>$ brew tap blendle/blendle
 $ brew install kns
 </code></pre></div>
-
 <h3 id="test-http-load-balancing">Test HTTP Load Balancing<a class="headerlink" href="#test-http-load-balancing" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">SERVER</span><span class="o">=</span><span class="m">1</span>.1.1.1
 $ <span class="nb">export</span> <span class="nv">PORT</span><span class="o">=</span><span class="m">32081</span>
@@ -706,7 +702,6 @@ Server name: <span class="s2">&quot;httpenv-cfb65dd68-mv26c&quot;</span>
 Server name: <span class="s2">&quot;httpenv-cfb65dd68-lkz6f&quot;</span>
 Server name: <span class="s2">&quot;httpenv-cfb65dd68-mv26c</span>
 </code></pre></div>
-
 <h3 id="kill-pod">Kill POD<a class="headerlink" href="#kill-pod" title="Permanent link">&para;</a></h3>
 <p>Do not wait grace period for signal propagation.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Delete a pod with minimal delay</span>
@@ -721,7 +716,6 @@ $ kubectl delete pod foo --grace-period<span class="o">=</span>-1
 <span class="c1"># Set to 1 for immediate shutdown. Can only be set</span>
 <span class="c1"># to 0 when --force is true (force deletion).</span>
 </code></pre></div>
-
 <h3 id="deployment-replicaset-pod-relations">Deployment / Replicaset / POD relations<a class="headerlink" href="#deployment-replicaset-pod-relations" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Deployment always create a replicaSet</li>
@@ -739,13 +733,11 @@ $ kubectl get pods
 NAME                        READY   STATUS    RESTARTS   AGE
 pingpong-6777998c97-l8dmk   <span class="m">1</span>/1     Running   <span class="m">0</span>          4m34s
 </code></pre></div>
-
 <h3 id="scale-deployment">Scale deployment<a class="headerlink" href="#scale-deployment" title="Permanent link">&para;</a></h3>
 <h4 id="instantiate-scale-up-process">Instantiate scale up process<a class="headerlink" href="#instantiate-scale-up-process" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>$ kubectl scale deployment nginx-basics --replicas<span class="o">=</span><span class="m">3</span>
 deployment.apps/nginx-basics scaled
 </code></pre></div>
-
 <h4 id="check-k8s-status">Check K8S status<a class="headerlink" href="#check-k8s-status" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>$ kubectl get deployments.apps nginx-basics
 NAME           READY   UP-TO-DATE   AVAILABLE   AGE
@@ -792,7 +784,6 @@ Events:
   ----    ------             ----  ----                   -------
   Normal  ScalingReplicaSet  4m5s  deployment-controller  Scaled up replica <span class="nb">set</span> nginx-basics-c48d789fd to <span class="m">3</span>
 </code></pre></div>
-
 <h4 id="check-with-server-requests">Check with Server requests<a class="headerlink" href="#check-with-server-requests" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>$ <span class="k">while</span> sleep <span class="m">0</span>.3<span class="p">;</span> <span class="k">do</span> curl -s test.lab.as73.inetsix.net/basics <span class="p">|</span> grep name<span class="p">;</span> <span class="k">done</span>
 Server name: nginx-basics-c48d789fd-kzcbt
@@ -801,7 +792,6 @@ Server name: nginx-basics-c48d789fd-vx9t5
 Server name: nginx-basics-c48d789fd-kzcbt
 Server name: nginx-basics-c48d789fd-vbrmv
 </code></pre></div>
-
 <h2 id="tricks">Tricks<a class="headerlink" href="#tricks" title="Permanent link">&para;</a></h2>
 <h3 id="dns-configuration">DNS configuration<a class="headerlink" href="#dns-configuration" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ microk8s <span class="nb">enable</span> dns
@@ -840,7 +830,6 @@ metadata:
     kubectl.kubernetes.io/last-applied-configuration: <span class="p">|</span>
 <span class="o">[</span>... output truncated ...<span class="o">]</span>
 </code></pre></div>
-
 <h3 id="issue-with-dns-resolution-on-alpine">Issue with DNS resolution on Alpine<a class="headerlink" href="#issue-with-dns-resolution-on-alpine" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>k8s-journey/manifests on  master [?] at ☸️  microk8s
 ➜ kubectl describe pod pingpong-8558fd45c7-pqc7p
@@ -863,7 +852,6 @@ Events:
   Warning  BackOff           4m9s (x4 over 4m34s)   kubelet, k8s-node01  Back-off restarting failed container
   Warning  DNSConfigForming  3m55s (x9 over 4m38s)  kubelet, k8s-node01  Search Line limits were exceeded, some search paths have been omitted, the applied search line is: default.svc.cluster.local svc.cluster.local cluster.local lab.as73.inetsix.net as73047inetsix.net inetsix.net
 </code></pre></div>
-
 <p>Reason is search name in DNS cannot exceed <a href="https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/core/validation/validation.go#L2832">6 dns domains</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="p">(</span>
     <span class="c1">// Limits on various DNS parameters. These are derived from</span>
@@ -876,7 +864,6 @@ Events:
     <span class="nx">MaxDNSSearchListChars</span> <span class="p">=</span> <span class="mi">256</span>
 <span class="p">)</span>
 </code></pre></div>
-
 <p>Discussion on <a href="https://stackoverflow.com/questions/59890834/k8s-coredns-and-flannel-nameserver-limit-exceeded">Stackoverflow</a></p>
                 
               

@@ -456,7 +456,6 @@
    -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
    gitlab/gitlab-runner:latest
 </code></pre></div>
-
 <p>This command starts a docker gitlabci runner and share following folder with host filesystem:</p>
 <ul>
 <li><code>/var/run/docker.sock</code> is bind to the same path within container</li>
@@ -471,7 +470,6 @@ $ docker run -d
    -v /home/docker/gitlab-runner:/etc/gitlab-runner <span class="se">\</span>
    gitlab/gitlab-runner:latest
 </code></pre></div>
-
 <p>Then, we have to register runner to your gitlab project. Go to <code>https://gitlab.your.server.com/your-namespace/your-project/settings/ci_cd</code> and note both your <strong><code>token</code></strong> and <strong><code>URL</code></strong></p>
 <p>Once you have these information, we can register the runner with following command:</p>
 <div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it gitlab-runner gitlab-runner register <span class="se">\</span>
